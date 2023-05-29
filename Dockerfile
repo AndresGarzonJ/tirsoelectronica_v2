@@ -1,6 +1,8 @@
-FROM jsdecena/php74-fpm
+# FROM jsdecena/php74-fpm
+FROM jsdecena/php8-fpm
 
-ENV NODE_VERSION=12.6.0
+# ENV NODE_VERSION=12.6.0
+ENV NODE_VERSION=18.16.0
 RUN apt update && apt install -y curl
 
 RUN docker-php-ext-install mysqli pdo_mysql gd
