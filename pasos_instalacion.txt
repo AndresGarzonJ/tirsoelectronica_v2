@@ -1,0 +1,102 @@
+1. Instalar Xammp para php y mysql, instalar MySQL Work
+2. Instalar Composer
+
+3. Copiar archivo .env, composer.json
+4. Ejecutar comandos <desde la carpeta raiz del proyecto>:
+	composer install
+	php artisan key:generate
+	
+	
+	DB
+		- opcion -migracion db
+			- Crear base de datos llamada: 
+				laracomgit
+					utf8
+					utf8_general_ci
+			- Habilitar GD
+				C:\xampp\php\php.init
+					Descomentar
+						extension=gd
+			- Ejecutar:
+				php artisan migrate --seed
+		- opcion - cargar info manualmente a la db		
+			- Copiar archivos/imagenes a la carpeta storage
+			- Cargar base de datos
+5. php artisan storage:link
+6. php artisan serve
+--------------------------------------------------------------
+
+Opcion Docker
+0. Si tiene MySQL instalado localmente. Entonces, apagar el servicio
+0. Desactivar antivirus
+1. Instalar Xampp v8.2.4
+2. Instalar Composer
+3. Instalar Docker
+4. Instalar NVM - https://github.com/coreybutler/nvm-windows
+	nvm install v18.16.0
+	nvm use v18.16.0
+5. Crear/Copiar .env
+6. Crear una base de datos "laracomgit"
+		- opcion -migracion db
+			- Crear base de datos llamada: 
+				CREATE SCHEMA `laracomgit` DEFAULT CHARACTER SET utf8 ;
+			- Habilitar GD (Solucion SOLO PHP 8)
+				C:\xampp\php\php.init
+					Descomentar
+						extension=gd
+			- Ejecutar:
+				php artisan migrate --seed
+		- opcion - cargar info manualmente a la db		
+			- Crear base de datos llamada: 
+				CREATE SCHEMA `laracomgit` DEFAULT CHARACTER SET utf8 ;
+			- Copiar archivos/imagenes a la carpeta storage
+			- Cargar base de datos
+7. Eliminar link storage ubicado en public
+8 Abrir una terminal en modo administrador
+	docker-compose up -d --build
+	docker exec -it app bash
+9. Dentro del contenedor (Gracias al comando anterior)
+		// Si sale error de token -- Ejecutar
+		// composer config --global --auth github-oauth.github.com {token}
+		// composer require xenon/shoppingcart
+
+	composer update
+	composer install && chmod -R 777 storage/ bootstrap/cache/
+		// Si sale error con "gloudemans/shoppingcart"
+		// https://github.com/Crinsane/LaravelShoppingcart/issues/677
+		// https://github.com/arif98741/LaravelShoppingcart
+
+	php artisan migrate --seed
+	npm i && npm run dev
+		// error 
+		[webpack-cli] [Error: ENOENT: no such file or directory, open '/var/www/node_modules/ionicons/dist/css/ionicons.css'] {
+			  errno: -2,
+			  code: 'ENOENT',
+			  syscall: 'open',
+			  path: '/var/www/node_modules/ionicons/dist/css/ionicons.css'
+			}
+		// solucion
+		rm -rf node_modules
+		npm i && npm run dev
+
+		// Si sale el siguiente error
+		> cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js
+		[webpack-cli] Error: Unknown option '--hide-modules'
+		[webpack-cli] Run 'webpack --help' to see available commands and options
+		// Solucion
+		https://laravel-mix.com/docs/6.0/upgrade
+
+
+	php artisan storage:link
+	npm run dev
+10. Ingresar al http://localhost:8000
+
+john@doe.com / secret (role:superadmin)
+admin@doe.com / secret (role:admin)
+clerk@doe.com / secret (role:user)
+
+
+OPCIONAL
+npm install -g npm-check-updates
+php artisan key:generate
+
