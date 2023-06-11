@@ -13,7 +13,7 @@
 				laracomgit
 					utf8
 					utf8_general_ci
-			- Habilitar GD
+			- Habilitar GD - Illuminate\Http\Testing\imagecreatetruecolor
 				C:\xampp\php\php.init
 					Descomentar
 						extension=gd
@@ -106,4 +106,4 @@ clerk@doe.com / secret (role:user)
 OPCIONAL
 npm install -g npm-check-updates
 php artisan key:generate
-
+php artisan serve
