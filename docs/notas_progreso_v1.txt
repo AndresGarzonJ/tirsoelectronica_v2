@@ -1,0 +1,637 @@
+{{asset( )}}
+[]
+{}
+
+Notas version
+
+
+v2
+-------------------------------------------------------------------------
+ 
+layoutSearch
+	Se quito la busqueda por cuidad
+
+index.blade
+	Del top-area se le quito el tiempo/conteo regresivo de promociones a las publicaciones
+
+products.blade.php
+	-Se creo el controlador --> ProductController
+	-Se utilizo la plantilla index-coupon-layout-1.html
+	-Las partes no necesarias se comentaron
+
+layoutMenu.blade.php
+	Se acomodo el nombre de las secciones
+
+layoutCarLogin
+	Comente los icono de Login y Carrito de Compras .. y los cambie por los de redes sociales
+
+article.blade.php
+	se acoplo la plantilla... {{asset( )}} ..para las imagenes
+	product-shop-centered.html
+
+category.blade.php
+
+ 
+
+Tarea
+
+* Falta redireccionar los links del menu
+* Colocar la imagen para layoutProduct.blade.php .. guardada en la BD
+* 
+
+
+
+
+Revisar con Don Tirso
+------------------------------------------------
+
+*Pagina productos
+	Seleccionada PAGINA PRINCIPAL
+		index-coupon-layout-1.html
+
+	Falta seleccionar el modo en que se presentara el listado de productos por categoria
+		category-page-thumbnails-coupon-layout-3.html
+			Quitar icono de carro
+		category-page-thumbnails-coupon-horizontal.html
+
+		category-page-thumbnails-shop-layout-5.html
+			Me gusta el icono de Vista
+
+		category-page-thumbnails-shop-layout-4.html
+			Tiene indicador de "New"
+
+		Las estrellas -- Posiblemente Quitar
+
+*Pagina un solo Producto
+	La que mas me gusto--- Teniendo en cuenta tambien MercadoLibre-Aliexpress-Amazon
+	product-shop-centered.html
+
+	product-shop-sidebar-left.html
+	product-shop-sidebar.html
+
+	De la plantilla product-coupon-default.html se cogio la cuenta regresiva..Descuento
+
+	
+
+*Menu
+	Si sea el mismo para todas las paginas
+
+*Verificar la pagina principal
+	index-header-layout-
+
+*Tutoriales
+	post-sidebar-left.html
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+26 de enero
+
+Pasos para generador de crud
+
+	pagina oficial del frame
+
+	1.Descargar el proyecto de github 
+		https://github.com/InfyOmLabs/adminlte-generator/tree/5.4
+
+		o
+		tambien se puede encontrar en
+		E:\Andres Garzon\2017 II\htdocs
+
+	2.para terminar de clonar el proyecto se deben hacer lo siguiente
+		-instalar las dependencias con el comando
+			composer install
+		-crear el archivo .env
+			copy NUL .env
+		-copiar el contenido del archivo .env.example al .env
+		-generar la clave del proyecto
+			php artisan key:generate
+	3. crear base de datos ..ej: nombre de la db es myapp
+		create database myapp
+	4. editar el .env con los datos de la db
+	5. comprobar 
+		php artisan serve
+
+	6. crear modelo
+		php artisan infyom:scaffold $MODEL_NAME
+
+		es como decir una tabla de la db
+		despues del comando la consola nos preguntara los atributos de la tabla
+		-colocamos el nombre de la siguiente forma
+			name db_type html_type options
+
+				name - name of the field (snake_case recommended)
+				db_type - database type. e.g.
+					string - $table->string('field_name')
+					string,25 - $table->string('field_name', 25)
+					text - $table->text('field_name')
+					integer,false,true - $table->integer('field_name',false,true)
+					string:unique - $table->string('field_name')->unique()
+					For foreign keys,
+						integer:unsigned:foreign,table_name,id
+						$table->foreign('field_name')->references('id')->on('table_name')
+				html_type - html field type for forms. e.g.
+					text							text
+					textarea						textarea
+					email							email
+					date							date
+					number							number
+					password						password
+					file (partially supported)		file
+					select 
+					select,value1,value2,value3 
+					select,label1:value1,label2:value2,label3:value3	
+													select,Daily,Weekly,Monthly 
+													select,Sunday:0,Monday:1,Tuesday:2
+					checkbox 
+					checkbox,value	
+													checkbox 
+													checkbox,yes 
+													checkbox,1
+					radio 
+					radio,label1,label2 
+					radio,label1:value1,label2:value2
+													radio,Male,Female 
+													radio,Yes:1,No:0
+				options
+					options - Options to prevent field from being searchable, fillable, display in form & index
+					Here are all options by which you can prevent it, these all fields should be passed by comma separated string.  e.g. s,f,if,ii
+
+						s - specify to make field non-searchable
+						f - specify to make field non-fillable
+						if - to skip field from being asked in form
+						ii - to skip field from being displayed in index view	
+				exaples:
+					title string text
+					body text textarea s,ii
+					email string:unique email
+					writer_id integer:unsigned:foreign,writers,id text s
+		-colocamos las validaciones
+			required
+			min:5
+			email
+			numeric
+		-cuando se desee terminar .. se escribe 
+			exit
+
+	7. antes de migrar ..vamos a app/Providers/AppServiceProvider.php y dentro 
+		de la funcion register colocamos
+			Schema::defaultStringLength(191);
+	8. En la consola ..hacemos la migracion
+		php artisan migrate
+
+-----------------------------------------------
+-----------------------------------------------
+1 Febrero 2018
+
+Lista de consulta/pedido
+
+N°Orden
+Nombre
+Descripcion
+Tipo
+Grupo
+Costo de compra
+Precio de venta
+Fecha de ingreso
+Cantidad
+Salida
+Existencia
+N°Caja
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+6 de Febrero / 2018
+
+https://styde.net/como-instalar-proyectos-existentes-de-laravel/
+https://styde.net/como-instalar-proyectos-existentes-de-laravel/
+
+
+Tareas
+
+Yeison 
+	Terminara de hacer la parte de home.blade.php.. es decir 
+		resumen de la pagina web
+		seccion de noticias
+		vista de los ultimos proyectos/videos/productos
+	El login para el administrador -> para ingresar a la plantilla de crud de
+		Videos/Proyectos/Articulos
+
+Andres
+	Hara la adaptacion de plantilla de administrador ... separando por archivos/secciones/layout/...
+	CRUD de articulos
+	Hacer prueba con BD
+	Link que redirija al home 
+
+	La pagina principal seleccionada es
+		infinity2\Infinity-v2.0.0\topbar\dashboard.3.html
+
+//3 de marzo --> se decidio cambiar las interfaces diferentes a las de admin 
+				porque se realizo una busnqueda en las tendencias del desarrollo 
+				de las ultimas pag web
+
+
+//6 de marzo ... arreglar el menuVerical para que sea responsive	
+				posiblemente quitar el icono de categori porque no es un menu ni nada
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+7 de Abril / 2018
+
+Categorias
+	Destacados
+	En oferta
+	Destacados
+	Popular
+	Productos relacionados //Vista del producto individual
+
+
+-------------------------------------------------------------------
+-------------------------------------------------------------------
+21 Abril 2018
+
+//Agregar campo tabla Productos 
+
+con las anteriores palabras se puede encotrar los archivos que se deben modificar para poder agregar un campo a la tabla productos de la db
+
+Los archivos son:
+
+C:\xampp\htdocs\laracom2\database\factories\ProductModelFactory.php
+C:\xampp\htdocs\laracom2\database\migrations\2017_06_10_225235_create_products_table.php
+C:\xampp\htdocs\laracom2\app\Shop\Products\Product.php
+C:\xampp\htdocs\laracom2\app\Shop\Products\Transformations\ProductTransformable.php
+C:\xampp\htdocs\laracom2\app\Shop\Products\Requests\UpdateProductRequest.php
+C:\xampp\htdocs\laracom2\app\Shop\Products\Requests\CreateProductRequest.php
+
+
+Formato precio -- sin decimales
+Ventana modal del producto
+Agregue dos variables a la tabla productos --> nBox, buyprice
+	ya esta por migraciones y se puede usar
+		falta adaptar al admin -- para que lo modifique el 
+
+Agregue a la db / tabla products -> el campo "tag" .. este se utilizara para decir si es
+	Nuevo - Destacado - En Oferta  -- Tambien tiene la opcion de Deshabilitado para no mostrar nada
+
+Se arreglo la barra de busqueda -- 
+	config/database.php --> se cambio la linea 'strict' => true,
+										por    'strict' => false,
+
+En la nueva version de Laracom se encontro:
+	ProductInvalidArgumentException.php
+		C:\xampp\htdocs\laracomV27Abril\app\Shop\Products\Exceptions
+
+-------
+Crear Todo lo relacionado para los Blogs
+
+1. Crear la migracion
+		php artisan make:migration create_blogs_table  
+
+2. Crear el Esquema/Migracion para la db
+		se crea el archivo create_blogs_table.php en Laravel/database/migrations
+
+3.Se hace las migraciones
+		php artisan migrate --seed
+			Para remover migraciones 
+			php artisan migrate:rollback
+
+3.Crear el modelo Blog .. con el comando
+		php artisan make:model Shop/Blogs/Blog 
+		
+4. Se crean las variables ... en app/Shop/Blogs/Blog.php
+    	protected $searchableColumns = ['name_blog', 'description'];
+		protected $fillable
+		protected $hidden = [];
+
+5. Se crea el controlador
+		php artisan make:controller Front/BlogController --resource
+
+6. La configuracion de BlogController se asemeja a ProductController
+
+7. Se crea la tabla seeder database/seeds/BlogsTableSeeder.php
+		Semejante a ProductsTableSeeder.php
+
+--SE AGREGO A LA TABLA DE BLOGS
+		cover		->Imagen de portada
+		status		->Si es un blog visible o no
+
+8. Se organizan los archivos adicionales de Blog
+ 		App/Shop/Blogs
+ 						Blog.php
+ 						Transformations
+ 						Repositories
+
+9. Crear tabla para las imagenes relacionadas con el blog
+
+------------19 de mayo 2018
+10. Se agragan las clases (Repositorios) de Blog en app/providers/RepositoryServiceProvider.php
+			BlogRepositoryInterface
+			BlogRepository
+
+11. Crear BlogModelFactory.php en database/factories
+12. Se creo la variable  description_short a la tabla de blog en la db
+13. Todo lo relacionado a la Creacion de un Blog
+		App/Shop/Blogs
+				Repositories/BlogRepository.php
+				Request/CreateblogsRequest.php
+		
+		Crear el controlador de blogs para el admin 
+				php artisan make:controller Admin/Blogs/BlogController
+		Route/web.php
+				Se añade para los blogs
+		
+		Se añade las vistas para el admin
+		resources/views
+				admin/blogs
+				layouts/admin/sidebar.blade.php
+		
+		Se Crea el Esquema/Migracion para la tabla blog_images
+				php artisan make:migration create_blogs_images_table
+					create_blogs_images_table.php en Laravel/database/migrations
+
+		Se crea el modelo para BlogImages
+				php artisan make:model Shop/BlogImages/BlogImage
+
+				y se crea BlogImageRepository.php
+AL PARECER HE CREADO LA TABLA IMAGENES PARA BLOGS PERO NO LA VOY A UTILIZAR
+
+14. Se crea resources/view/admin/shared/blogs.blade.php
+
+15. Ya se tiene del blog 
+			en la vista principal de blogs / admin .. ya se puede buscar
+
+16. 
+	Se habia creado la tabla blog_images ... el cual almacenaria las imagenes a usar en el blog.. pero se tomo la desicion de no usarla.. se buscara otra manera... de igual .. no se borro nada, solo se comento el codigo
+
+	En la tabla de blog se elimino los campos src_video2 src_video3 src_video4..solo se usara un solo link el cual sera una lista de reproduccion de youtube!
+
+------------------9 Junio 2018
+	
+	*Se acomodo la ruta de tutoriales
+	*Se adapto el modo de vista de las imagenes de productos... para mostrar la imagen cover y el video
+		Se tuvo que modificar un css product-details2-area ... (layouts/front/blog)
+
+	*Para el numero de blogs que se muestran .. hay que tener en cuenta lo siguiente (ej: HomeController)
+			return view('front.tutoriales', [
+                'blogs' => $this->blogRepo->paginateArrayResults($blogs->all(), 6)
+            ]);
+        
+17. Tareas
+		
+		*Seccion de comentarios
+		*Seccion de noticias		
+		*Tamaño de las imagenes -- Alto igual -- Redimensionar al guardar / front tambien
+		* Al hacer click en la imagen del top-area ..Redireccionar
+		* EN LOS OCNTROLADORES DE FRONT NO DEBERIA IR CONSULTAS A LA DB --> EJ: HOMECONTROLLER
+
+		Principal
+			*Barra de busqueda -- busqueda global
+			*Agregar los iconos de redes sociales
+		Tienda
+			*Acomodar vista tienda -- esta hereda de index (reuitliza)
+			*Botones / Iconos -- Por ej. el boton de carro de compras tiene estilos diferentes
+			*Enlace con mercadolibre
+			*Tags
+			*Barra Categorias 
+			*Organizar front/products/products-search 
+			*Agregar a la tabla products - Link de MercadoLibre 
+
+		Tutoriales
+			*(Echo) - Descripcion corta de blogs - no esta limitada
+			*(Echo) Admin/Blogs -> Borrar sin recargar la pagina
+			*(Recomendacion) actualizar -- MUCHO CUIDADO CON LOS CAMPOS VACIOS -- admin / BlogController
+			*(Echo - La tabla blog_imagenes se deshabilito ) borrar -- En la logica de borra .. no se permite si este tiene imagenes vinculadas en otra tabla
+
+			*Redimensionar imagenes blogs 373x219 
+			*Barra lateral izquierda -- Organizar los blogs por Fecha
+			*Organizar tutoriales -- en la carpeta que es -- blogs
+			*nombre de blogs o tutoriales en el codigo		
+			*Guardar datos sin espacios vacios
+			*El texto de description ..guardarla en un txt ?
+
+		Contacto
+			*Redes sociales YouTube/Mercadolibre/Facebook
+			*Logica / Formulario para ingresar los datos
+			*El cover de contactos se está guardando en public/storage
+			*Iconos -- que aparezca el nombre del lugar
+			*Añadir icono de whatsapp
+
+		Carro
+			*Acciones de los botones actualicen la pag sin recargar 
+
+		Panel Index
+			*Las rutas/href no sean estaticas!
+			*Rehubicar las imagenes  -- Ya que no son imagenes estaticas //public/storage/
+			*Establecer limite de caracteres a los campos .. por estetica del panel 
+			*El controlador en Front .. la func removeImage se podria pasar a Admin
+					Por lo tanto se podria eliminar este controlador
+			*Consulta directa a la db en HomeController -- las consultas estan en App/Shop/Base/BaseRepository.php
+
+
+------------------21 de Junio - 2018
+	Agregue contador de caracteres para description_short
+		https://github.com/PeteAUK/cke-charcount/tree/master/plugins/charcount
+
+		EL plugin se agrego a public/js/charcount/cke-charcount-plugin.js
+
+		https://ckeditor.com/ckeditor-4/download/
+		https://laracasts.com/discuss/channels/general-discussion/ckeditor-image-upload-with-laravel
+		https://www.youtube.com/watch?v=o_mgKof9TOQ
+
+	Link Lista de reproduccion/Video del blog
+		Para la lista de reproduccion solo es necesario el link de compartir..similar a este
+			https://www.youtube.com/playlist?list=PLQqX8aKGHZ3HdskDWHss9poPRecOOhjh0
+
+		Si es solo un video.. basta con copiar el link del video 
+			https://www.youtube.com/watch?v=hELbAXV5p5U
+
+		internamente el programa le añade al link la palabra  
+			embed/videoseries 	para listas 
+			embed/				para un solo video
+
+	La variable status de blog ya habilita y deshabilita la vista de ellos /para el publico en general
+
+------------------23 de Junio - 2018
+	
+	javascript con Laravel
+		https://laravel.io/forum/12-14-2015-using-laravel-route-in-javascript
+
+	borrar un blog sin recargar la pagina
+		1. En web.php ..crear la ruta porque se va a enviar el id usando get
+		2. En Admin/BlogController ..capturar el id del request y comentar el return
+		3. En la vista de admin/shared/blogs cambiar parametros del formulario, agregar 
+				la funcion de Javascript 
+
+-------------------28 de Junio de 2018
+	-Se actualizo los repositorios ..instalar laravel collective 
+		composer update
+	-Se agrego el boton crear blog .. a la vista de list blogs
+	-Se agrego el boton crear producto .. a la vista de list products
+	
+	FALTA -Redimensionar imagenes blogs 373x219 
+			composer require intervention/image
+
+			config/app.php
+				Intervention\Image\ImageServiceProvider::class,
+				'Image' => Intervention\Image\Facades\Image::class,
+
+			php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravel5"
+
+
+-------------------3 de julio de 2018
+
+	Logica de la pag de contactos
+			ver **** http://www.videorockola.com/consultoria/
+
+			1. php artisan make:migration create_contacts_table 
+			2. php artisan make:model Shop/Contacts/Contact
+			3. php artisan make:controller Admin/Contacts/ContactController --resource
+			4. php artisan make:seeder ContactsTableSeeder
+			5. Agregar a database/seeds/DatabaseSeeder
+			6. Se agragan las clases (Repositorios) de Contact en app/providers/RepositoryServiceProvider.php
+					ContactRepositoryInterface
+					ContactRepository
+
+			7. en la vista views/front/contacto.blade.php 
+					se colocaron los datos traidos de la db
+
+					Los iconos de las redes sociales tocó agregarles el css manualmente
+			8. No se creo el controlador de Front
+			9. Ya funciona! 
+			10. Como en el footer se utiliza los links de las redes sociales que estan en Contact.. y el footer se utiliza en todas las vistas, entonces contact se agrega a 
+				app/providers/GlobalTemplateServiceProvider.php
+			De esta manera los links de las redes sociales siempre los podra acceder el layout de footer
+
+-------------------13 de septiembre de 2018
+	Se acomodaron las rutas front/back para redirigir las imagenes a storage/panels
+		SIN EMBARGO falta acomodar logica controller-repositories-consultas DB
+
+	En Blogs - Panel izquierdo - Agrupar los blogs por mes año
+
+		(El paso1 fue desecho)
+		1. se agregaron las columnas (dia mes anio)a la tabla blogs en los arhivos
+				database/migrations/create_blogs_table
+				database/factories/BlogModelFactory
+				app/Shop/Blogs/Blog 
+				app/Shop/Blogs/Transformations/BlogTransformable
+
+		2. El echo que la barra lateral de los blogs se use en mas de una interfaz, complica la tranferencia de las variables con compact() o en json.
+
+			Por lo que fue necesario recurrir a 
+				app/providers/GlobalTemplateServiceProvider.php
+			para compartir los datos de manera global hacia 
+				blog-side-right.blade.php
+
+		3. Esta consulta con los helpers-sql de Lavarel es dificil de hacer... por lo que se recurre al SQL tradicional (junto con una libreria de Laravel)
+
+			3.1 La consulta SQL se define en app/Shop/Base/BaseRepository.php
+			3.2 En app/Shop/Blogs/Repositories/BlogRepository se obtienen los datos de la consulta
+			3.3 Y por ultimo en app/providers/GlobalTemplateServiceProvider.php se envian los datos
+
+			(Los anteriores sub-pasos se hacen en el orden indicado)
+
+		4. Se tuvieron que realizar dos consultas 
+			Una para contar/total los blogs por anio y mes
+			Otra para traer los slug y nombres de los blogs
+
+	app/providers/GlobalTemplateServiceProvider.php tambien se uso para enviar los datos del footer-contact barra-lateral-blogs-recientes
+
+	-------------------4 de Diciembre de 2018
+
+	Paneles .. index
+		1. Se re-organizaron las variables de la tabla
+			'title',
+            'location_image', 
+            'imagen',
+            'description1',
+            'description2',
+            'text_btn_link', 
+            'link'
+        2. El link puede ser cualquiera .. (antes solo era para categorias)
+        
+        3. En public se encuentran las imagenes de guia para incrustar las imagenes-producto
+        	public/guia-1-derecho.jpg
+        	public/guia-2-derecho.jpg
+        4. En index.blade.php (principal) se reemplazo la interfaz-marco para los paneles
+
+        5. Se organizaron los formularios-paneles para el admin 
+
+---Continuacion ... paneles
+        6. Se añadio una ventana modal para guiar el sentido de la imagen en create-edit panel (admin)..  
+
+        7. En index se cambio los tags a una sola vista--es decir sinfiltros
+        		Para aplicar filtros ..descomentar una parte
+        7.1 Se añadio tags...
+        		Agotado
+        		Por Llegar
+        
+        Ensayar con diferentes tamaños de imagen ---productos
+		En productos colocar descuento!!
+		Continuar-... El filtro de Tienda-Tags aplicar al index
+
+
+Blade Snippets
+CodeFormatter
+Laravel 5 Docs Light Color Scheme
+Laravel 5 Snippets
+Laravel Blade AutoComplete
+Laravel Blade Highlighter
+Laravel Blade Spacer
+Laravel Colour Scheme
+Laravel Helper Completions
+LaravelCollective HTML Form Snippets
+Material Theme
+Package Control
+
+
+--- 16 de Julio de 2020
+
+Tareas Andres:
+	Cuando los productos son presentados en lista
+		1. Linkear hacia el producto - el boton de vista del producto (completo)
+		2. Acomodar cuando hay o no descuento ... que se subraye el numero indicado... Sino hay descuento que solo aparezca un solo numero (precio) ... 
+		3. Limitar el numero de caracteres que se muestran -- para emparejar/ cuadricula
+
+	Listar Tutoriales
+		1. CSS de Paginacion, es decir igual forma, color, y letra.
+
+---Test Commit
+---Test Commit 2
+---Test Commit 3
+
+
+-- 28 de Octubre de 2020
+
+-> Se arreglo la actualizacion/borrar de la imagen_segundaria en el apartado de admin/producto 
+
+Tarea: 
+
+	A nivel responsabilidad:
+		Verificar que no se haga busquedas SQL en los controladores 
+			Admin.PanelController.update
+			Front.ProductController.search
+
+	Admin
+		1-> Verificar en los demas modulos - CRUD en admin. Es decir, en paneles, blogs, categorias, contacto
+		2-> Verificar en los demas modulos los datos oligatorios
+		3-> En categorias el poder crear subcategorias, y mostrarlas en el front
+		4-> Actualizar en la vistaAdmin (lo que ve el administrador) para que todo este en español
+		5-> (Opcional) Re-Implemenar el boton ayuda - Está implementado en Panels
+		6-> (No tan urgente) - Buscar la manera de que todas las imagenes se muestren del mismo tamaño
+
+	Cliente 
+		7-> Busqueda -> Mejorar visualmente el filtro de precio / Adaptar al estilo de la plantilla
+		8-> Busqueda -> Los productos que se encuentra actualizar cantidad en la o junto a la categoria
+		9-> Busqueda -> De bajo de la barra de busqueda implementar un check boton, si desea buscar en productos o en blogs
+		10-> Producto -> Implementar el Zoom en la imagem - Verificar en laracom ecommerce
+		https://shop.laracom.net/esse-voluptas-natus-minima
+		11-> En la paginacion adaptar el estilo visual de la plantilla
+
+	Prioritarias
+		Para presentación con Don Tirso --- Para que nos pague
+			
+			3
+			1
+			2 -> Verificar en BD etiqueta NN -NotNull // Luego en el App/Shop/**/Request verifica (requerido o no)		
+			5 
+			4 - Menos prioridad
