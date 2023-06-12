@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Shop\Dummies\Repositories\Interfaces;
+namespace App\Models\Shop\Dummies\Repositories\Interfaces;
 
-use App\Shop\Dummies\Dummy;
+use App\Models\Shop\Dummies\Dummy;
 use Illuminate\Support\Collection;
 use Jsdecena\Baserepo\BaseRepositoryInterface;
 

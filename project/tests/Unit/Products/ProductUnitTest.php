@@ -2,20 +2,20 @@
 
 namespace Tests\Unit\Products;
 
-use App\Shop\Categories\Category;
-use App\Shop\ProductImages\ProductImage;
-use App\Shop\ProductImages\ProductImageRepository;
-use App\Shop\Products\Exceptions\ProductCreateErrorException;
-use App\Shop\Products\Exceptions\ProductNotFoundException;
-use App\Shop\Products\Exceptions\ProductUpdateErrorException;
-use App\Shop\Products\Product;
-use App\Shop\Products\Repositories\ProductRepository;
+use App\Models\Shop\Categories\Category;
+use App\Models\Shop\ProductImages\ProductImage;
+use App\Models\Shop\ProductImages\ProductImageRepository;
+use App\Models\Shop\Products\Exceptions\ProductCreateErrorException;
+use App\Models\Shop\Products\Exceptions\ProductNotFoundException;
+use App\Models\Shop\Products\Exceptions\ProductUpdateErrorException;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Products\Repositories\ProductRepository;
 use Exception;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Tests\TestCase;
-use App\Shop\Products\Transformations\ProductTransformable;
+use App\Models\Shop\Products\Transformations\ProductTransformable;
 
 class ProductUnitTest extends TestCase
 {

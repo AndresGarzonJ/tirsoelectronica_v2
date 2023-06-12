@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Cart;
 
-use App\Shop\Carts\Exceptions\ProductInCartNotFoundException;
-use App\Shop\Carts\Repositories\CartRepository;
-use App\Shop\Carts\ShoppingCart;
+use App\Models\Shop\Carts\Exceptions\ProductInCartNotFoundException;
+use App\Models\Shop\Carts\Repositories\CartRepository;
+use App\Models\Shop\Carts\ShoppingCart;
 use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Exceptions\InvalidRowIDException;
 use Tests\TestCase;

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\Brands;
 
-use App\Shop\Brands\Brand;
+use App\Models\Shop\Brands\Brand;
 use Tests\TestCase;
 
 class BrandFeatureTest extends TestCase

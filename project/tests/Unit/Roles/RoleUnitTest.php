@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Roles;
 
-use App\Shop\Roles\Exceptions\CreateRoleErrorException;
-use App\Shop\Roles\Repositories\RoleRepository;
-use App\Shop\Roles\Role;
+use App\Models\Shop\Roles\Exceptions\CreateRoleErrorException;
+use App\Models\Shop\Roles\Repositories\RoleRepository;
+use App\Models\Shop\Roles\Role;
 use Illuminate\Support\Collection;
 use Tests\TestCase;
 

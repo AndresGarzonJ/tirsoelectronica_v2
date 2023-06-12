@@ -2,9 +2,9 @@
 
 namespace Tests\Feature\Admin\Products;
 
-use App\Shop\Categories\Category;
-use App\Shop\Products\Product;
-use App\Shop\Products\Repositories\ProductRepository;
+use App\Models\Shop\Categories\Category;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Products\Repositories\ProductRepository;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 use Tests\TestCase;

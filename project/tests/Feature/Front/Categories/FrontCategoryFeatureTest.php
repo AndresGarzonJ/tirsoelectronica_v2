@@ -2,9 +2,9 @@
 
 namespace Tests\Feature\Front\Categories;
 
-use App\Shop\Categories\Category;
-use App\Shop\Products\Product;
-use App\Shop\Products\Repositories\ProductRepository;
+use App\Models\Shop\Categories\Category;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Products\Repositories\ProductRepository;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 

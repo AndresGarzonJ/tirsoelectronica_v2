@@ -2,15 +2,15 @@
 
 namespace Tests\Unit\ProductAttributes;
 
-use App\Shop\Attributes\Attribute;
-use App\Shop\Attributes\Repositories\AttributeRepository;
-use App\Shop\AttributeValues\AttributeValue;
-use App\Shop\AttributeValues\Repositories\AttributeValueRepository;
-use App\Shop\ProductAttributes\Exceptions\ProductAttributeNotFoundException;
-use App\Shop\ProductAttributes\ProductAttribute;
-use App\Shop\ProductAttributes\Repositories\ProductAttributeRepository;
-use App\Shop\Products\Product;
-use App\Shop\Products\Repositories\ProductRepository;
+use App\Models\Shop\Attributes\Attribute;
+use App\Models\Shop\Attributes\Repositories\AttributeRepository;
+use App\Models\Shop\AttributeValues\AttributeValue;
+use App\Models\Shop\AttributeValues\Repositories\AttributeValueRepository;
+use App\Models\Shop\ProductAttributes\Exceptions\ProductAttributeNotFoundException;
+use App\Models\Shop\ProductAttributes\ProductAttribute;
+use App\Models\Shop\ProductAttributes\Repositories\ProductAttributeRepository;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Products\Repositories\ProductRepository;
 use Tests\TestCase;
 
 class ProductAttributeUnitTest extends TestCase

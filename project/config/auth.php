@@ -78,12 +78,12 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Shop\Customers\Customer::class,
+            'model' => App\Models\Shop\Customers\Customer::class,
         ],
 
          'employee' => [
              'driver' => 'eloquent',
-             'model' => App\Shop\Employees\Employee::class,
+             'model' => App\Models\Shop\Employees\Employee::class,
          ],
     ],
 

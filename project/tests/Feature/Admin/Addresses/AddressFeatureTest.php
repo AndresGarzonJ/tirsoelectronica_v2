@@ -2,11 +2,11 @@
 
 namespace Tests\Feature\Admin\Addresses;
 
-use App\Shop\Addresses\Address;
-use App\Shop\Customers\Customer;
-use App\Shop\Provinces\Province;
-use App\Shop\Cities\City;
-use App\Shop\Countries\Country;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Provinces\Province;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Countries\Country;
 use Tests\TestCase;
 
 class AddressFeatureTest extends TestCase

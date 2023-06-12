@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Categories;
 
-use App\Shop\Categories\Exceptions\CategoryNotFoundException;
-use App\Shop\Categories\Repositories\CategoryRepository;
-use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
+use App\Models\Shop\Categories\Exceptions\CategoryNotFoundException;
+use App\Models\Shop\Categories\Repositories\CategoryRepository;
+use App\Models\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
 use App\Http\Controllers\Admin\Categories\Requests\CreateCategoryRequest;
 use App\Http\Controllers\Admin\Categories\Requests\UpdateCategoryRequest;
 use App\Http\Controllers\Controller;

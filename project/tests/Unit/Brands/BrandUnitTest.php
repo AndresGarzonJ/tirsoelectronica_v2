@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Brands;
 
-use App\Shop\Brands\Brand;
-use App\Shop\Brands\Repositories\BrandRepository;
+use App\Models\Shop\Brands\Brand;
+use App\Models\Shop\Brands\Repositories\BrandRepository;
 use Illuminate\Support\Collection;
 use Tests\TestCase;
 

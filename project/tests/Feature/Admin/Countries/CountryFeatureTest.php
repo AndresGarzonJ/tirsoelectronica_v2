@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\Countries;
 
-use App\Shop\Countries\Country;
+use App\Models\Shop\Countries\Country;
 use Tests\TestCase;
 
 class CountryFeatureTest extends TestCase

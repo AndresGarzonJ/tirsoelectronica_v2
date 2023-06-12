@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Cities;
 
-use App\Shop\Cities\Exceptions\CityNotFoundException;
-use App\Shop\Cities\Repositories\CityRepository;
-use App\Shop\Cities\City;
+use App\Models\Shop\Cities\Exceptions\CityNotFoundException;
+use App\Models\Shop\Cities\Repositories\CityRepository;
+use App\Models\Shop\Cities\City;
 use Tests\TestCase;
 
 class CityUnitTest extends TestCase

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\Roles;
 
-use App\Shop\Roles\Role;
+use App\Models\Shop\Roles\Role;
 use Tests\TestCase;
 
 class RoleFeatureTest extends TestCase

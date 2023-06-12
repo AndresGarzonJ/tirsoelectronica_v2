@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin\Customers;
 
-use App\Shop\Customers\Customer;
-use App\Shop\Customers\Repositories\CustomerRepository;
-use App\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
-use App\Shop\Customers\Requests\CreateCustomerRequest;
-use App\Shop\Customers\Requests\UpdateCustomerRequest;
-use App\Shop\Customers\Transformations\CustomerTransformable;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Repositories\CustomerRepository;
+use App\Models\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
+use App\Models\Shop\Customers\Requests\CreateCustomerRequest;
+use App\Models\Shop\Customers\Requests\UpdateCustomerRequest;
+use App\Models\Shop\Customers\Transformations\CustomerTransformable;
 use App\Http\Controllers\Controller;
 
 class CustomerController extends Controller

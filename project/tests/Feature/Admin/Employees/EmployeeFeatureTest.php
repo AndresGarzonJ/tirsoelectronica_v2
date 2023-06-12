@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Admin\Employees;
 
-use App\Shop\Employees\Employee;
-use App\Shop\Employees\Repositories\EmployeeRepository;
+use App\Models\Shop\Employees\Employee;
+use App\Models\Shop\Employees\Repositories\EmployeeRepository;
 use Illuminate\Auth\Events\Lockout;
 use Tests\TestCase;
 

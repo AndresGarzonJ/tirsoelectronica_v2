@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin\Products;
 
-use App\Shop\Attributes\Repositories\AttributeRepositoryInterface;
-use App\Shop\AttributeValues\Repositories\AttributeValueRepositoryInterface;
-use App\Shop\Brands\Repositories\BrandRepositoryInterface;
-use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
-use App\Shop\ProductAttributes\ProductAttribute;
-use App\Shop\Products\Exceptions\ProductUpdateErrorException;
-use App\Shop\Products\Product;
-use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
-use App\Shop\Products\Repositories\ProductRepository;
-use App\Shop\Products\Requests\CreateProductRequest;
-use App\Shop\Products\Requests\UpdateProductRequest;
+use App\Models\Shop\Attributes\Repositories\AttributeRepositoryInterface;
+use App\Models\Shop\AttributeValues\Repositories\AttributeValueRepositoryInterface;
+use App\Models\Shop\Brands\Repositories\BrandRepositoryInterface;
+use App\Models\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
+use App\Models\Shop\ProductAttributes\ProductAttribute;
+use App\Models\Shop\Products\Exceptions\ProductUpdateErrorException;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
+use App\Models\Shop\Products\Repositories\ProductRepository;
+use App\Models\Shop\Products\Requests\CreateProductRequest;
+use App\Models\Shop\Products\Requests\UpdateProductRequest;
 use App\Http\Controllers\Controller;
-use App\Shop\Products\Transformations\ProductTransformable;
-use App\Shop\Tools\UploadableTrait;
+use App\Models\Shop\Products\Transformations\ProductTransformable;
+use App\Models\Shop\Tools\UploadableTrait;
 use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;

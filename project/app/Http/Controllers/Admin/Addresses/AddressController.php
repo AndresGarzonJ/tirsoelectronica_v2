@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Admin\Addresses;
 
-use App\Shop\Addresses\Address;
-use App\Shop\Addresses\Repositories\AddressRepository;
-use App\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
-use App\Shop\Addresses\Requests\CreateAddressRequest;
-use App\Shop\Addresses\Requests\UpdateAddressRequest;
-use App\Shop\Addresses\Transformations\AddressTransformable;
-use App\Shop\Cities\City;
-use App\Shop\Cities\Repositories\Interfaces\CityRepositoryInterface;
-use App\Shop\Countries\Country;
-use App\Shop\Countries\Repositories\CountryRepository;
-use App\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;
-use App\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Addresses\Repositories\AddressRepository;
+use App\Models\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
+use App\Models\Shop\Addresses\Requests\CreateAddressRequest;
+use App\Models\Shop\Addresses\Requests\UpdateAddressRequest;
+use App\Models\Shop\Addresses\Transformations\AddressTransformable;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Cities\Repositories\Interfaces\CityRepositoryInterface;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\Countries\Repositories\CountryRepository;
+use App\Models\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;
+use App\Models\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
 use App\Http\Controllers\Controller;
-use App\Shop\Provinces\Repositories\Interfaces\ProvinceRepositoryInterface;
+use App\Models\Shop\Provinces\Repositories\Interfaces\ProvinceRepositoryInterface;
 use Illuminate\Http\Request;
 
 class AddressController extends Controller

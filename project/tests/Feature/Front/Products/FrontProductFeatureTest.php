@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Front\Products;
 
-use App\Shop\Products\Product;
+use App\Models\Shop\Products\Product;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 

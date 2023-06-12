@@ -13,8 +13,8 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Shop\Countries\Country;
-use App\Shop\States\State;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\States\State;
 
 $factory->define(State::class, function (Faker\Generator $faker) {
     $country = factory(Country::class)->create();

@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Shop\Products\Product;
+use App\Models\Shop\Products\Product;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 

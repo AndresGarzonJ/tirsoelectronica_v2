@@ -13,7 +13,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Shop\Brands\Brand;
+use App\Models\Shop\Brands\Brand;
 
 $factory->define(Brand::class, function (Faker\Generator $faker) {
 

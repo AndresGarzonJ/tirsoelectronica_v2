@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Shop\Provinces\Province;
+use App\Models\Shop\Provinces\Province;
 
 $factory->define(Province::class, function (Faker\Generator $faker) {
 

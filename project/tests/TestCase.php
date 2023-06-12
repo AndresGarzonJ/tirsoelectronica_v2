@@ -2,20 +2,20 @@
 
 namespace Tests;
 
-use App\Shop\Addresses\Address;
-use App\Shop\Categories\Category;
-use App\Shop\Countries\Country;
-use App\Shop\Couriers\Courier;
-use App\Shop\Couriers\Repositories\CourierRepository;
-use App\Shop\Employees\Employee;
-use App\Shop\Customers\Customer;
-use App\Shop\Employees\Repositories\EmployeeRepository;
-use App\Shop\OrderStatuses\OrderStatus;
-use App\Shop\OrderStatuses\Repositories\OrderStatusRepository;
-use App\Shop\Permissions\Permission;
-use App\Shop\Products\Product;
-use App\Shop\Roles\Repositories\RoleRepository;
-use App\Shop\Roles\Role;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Categories\Category;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\Couriers\Courier;
+use App\Models\Shop\Couriers\Repositories\CourierRepository;
+use App\Models\Shop\Employees\Employee;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Employees\Repositories\EmployeeRepository;
+use App\Models\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\OrderStatuses\Repositories\OrderStatusRepository;
+use App\Models\Shop\Permissions\Permission;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Roles\Repositories\RoleRepository;
+use App\Models\Shop\Roles\Role;
 use Gloudemans\Shoppingcart\Cart;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;

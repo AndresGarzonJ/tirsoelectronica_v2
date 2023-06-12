@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Admin\Provinces;
 
-use App\Shop\Countries\Country;
-use App\Shop\Provinces\Province;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\Provinces\Province;
 use Tests\TestCase;
 
 class ProvinceFeatureTest extends TestCase

@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Shop\Employees\Employee;
+use App\Models\Shop\Employees\Employee;
 use Illuminate\Support\Str;
 
 $factory->define(Employee::class, function (Faker\Generator $faker) {

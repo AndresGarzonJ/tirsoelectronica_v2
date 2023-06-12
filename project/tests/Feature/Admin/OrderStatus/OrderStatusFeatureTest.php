@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\OrderStatus;
 
-use App\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\OrderStatuses\OrderStatus;
 use Tests\TestCase;
 
 class OrderStatusFeatureTest extends TestCase

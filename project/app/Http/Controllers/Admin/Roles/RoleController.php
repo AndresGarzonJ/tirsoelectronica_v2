@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin\Roles;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Permissions\Repositories\Interfaces\PermissionRepositoryInterface;
-use App\Shop\Roles\Repositories\RoleRepository;
-use App\Shop\Roles\Repositories\RoleRepositoryInterface;
-use App\Shop\Roles\Requests\CreateRoleRequest;
-use App\Shop\Roles\Requests\UpdateRoleRequest;
+use App\Models\Shop\Permissions\Repositories\Interfaces\PermissionRepositoryInterface;
+use App\Models\Shop\Roles\Repositories\RoleRepository;
+use App\Models\Shop\Roles\Repositories\RoleRepositoryInterface;
+use App\Models\Shop\Roles\Requests\CreateRoleRequest;
+use App\Models\Shop\Roles\Requests\UpdateRoleRequest;
 
 class RoleController extends Controller
 {

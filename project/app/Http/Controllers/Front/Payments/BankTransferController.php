@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Front\Payments;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
-use App\Shop\Checkout\CheckoutRepository;
-use App\Shop\Orders\Repositories\OrderRepository;
-use App\Shop\OrderStatuses\OrderStatus;
-use App\Shop\OrderStatuses\Repositories\OrderStatusRepository;
-use App\Shop\Shipping\ShippingInterface;
+use App\Models\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
+use App\Models\Shop\Checkout\CheckoutRepository;
+use App\Models\Shop\Orders\Repositories\OrderRepository;
+use App\Models\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\OrderStatuses\Repositories\OrderStatusRepository;
+use App\Models\Shop\Shipping\ShippingInterface;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;

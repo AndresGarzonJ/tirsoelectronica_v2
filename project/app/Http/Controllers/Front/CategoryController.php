@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Shop\Categories\Repositories\CategoryRepository;
-use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
+use App\Models\Shop\Categories\Repositories\CategoryRepository;
+use App\Models\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
 use App\Http\Controllers\Controller;
-use App\Shop\Products\Transformations\ProductTransformable;
+use App\Models\Shop\Products\Transformations\ProductTransformable;
 
 class CategoryController extends Controller
 {
@@ -30,7 +30,7 @@ class CategoryController extends Controller
      * Find the category via the slug
      *
      * @param string $slug
-     * @return \App\Shop\Categories\Category
+     * @return \App\Models\Shop\Categories\Category
      */
     public function getCategory(string $slug)
     {

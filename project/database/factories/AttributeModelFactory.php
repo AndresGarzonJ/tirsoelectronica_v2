@@ -11,7 +11,7 @@
 |
 */
 
-use App\Shop\Attributes\Attribute;
+use App\Models\Shop\Attributes\Attribute;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Attribute::class, function (Faker\Generator $faker) {
     return [

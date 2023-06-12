@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\AttributeValues;
 
-use App\Shop\Attributes\Attribute;
+use App\Models\Shop\Attributes\Attribute;
 use Tests\TestCase;
 
 class AttributeValuesFeatureTest extends TestCase

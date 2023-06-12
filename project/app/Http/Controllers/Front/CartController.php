@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Shop\Carts\Requests\AddToCartRequest;
-use App\Shop\Carts\Requests\UpdateCartRequest;
-use App\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
-use App\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
-use App\Shop\ProductAttributes\Repositories\ProductAttributeRepositoryInterface;
-use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
-use App\Shop\Products\Transformations\ProductTransformable;
+use App\Models\Shop\Carts\Requests\AddToCartRequest;
+use App\Models\Shop\Carts\Requests\UpdateCartRequest;
+use App\Models\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
+use App\Models\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
+use App\Models\Shop\ProductAttributes\Repositories\ProductAttributeRepositoryInterface;
+use App\Models\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
+use App\Models\Shop\Products\Transformations\ProductTransformable;
 use App\Http\Controllers\Controller;
 
 class CartController extends Controller

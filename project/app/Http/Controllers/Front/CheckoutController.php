@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
-use App\Shop\Carts\Requests\CartCheckoutRequest;
-use App\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
-use App\Shop\Carts\Requests\PayPalCheckoutExecutionRequest;
-use App\Shop\Carts\Requests\StripeExecutionRequest;
-use App\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
-use App\Shop\Customers\Customer;
-use App\Shop\Customers\Repositories\CustomerRepository;
-use App\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
-use App\Shop\Orders\Repositories\Interfaces\OrderRepositoryInterface;
-use App\Shop\PaymentMethods\Paypal\Exceptions\PaypalRequestError;
-use App\Shop\PaymentMethods\Paypal\Repositories\PayPalExpressCheckoutRepository;
-use App\Shop\PaymentMethods\Stripe\Exceptions\StripeChargingErrorException;
-use App\Shop\PaymentMethods\Stripe\StripeRepository;
-use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
-use App\Shop\Products\Transformations\ProductTransformable;
-use App\Shop\Shipping\ShippingInterface;
+use App\Models\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
+use App\Models\Shop\Carts\Requests\CartCheckoutRequest;
+use App\Models\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
+use App\Models\Shop\Carts\Requests\PayPalCheckoutExecutionRequest;
+use App\Models\Shop\Carts\Requests\StripeExecutionRequest;
+use App\Models\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Repositories\CustomerRepository;
+use App\Models\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
+use App\Models\Shop\Orders\Repositories\Interfaces\OrderRepositoryInterface;
+use App\Models\Shop\PaymentMethods\Paypal\Exceptions\PaypalRequestError;
+use App\Models\Shop\PaymentMethods\Paypal\Repositories\PayPalExpressCheckoutRepository;
+use App\Models\Shop\PaymentMethods\Stripe\Exceptions\StripeChargingErrorException;
+use App\Models\Shop\PaymentMethods\Stripe\StripeRepository;
+use App\Models\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
+use App\Models\Shop\Products\Transformations\ProductTransformable;
+use App\Models\Shop\Shipping\ShippingInterface;
 use Exception;
 use App\Http\Controllers\Controller;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -140,8 +140,8 @@ class CheckoutController extends Controller
      * @param CartCheckoutRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
-     * @throws \App\Shop\Addresses\Exceptions\AddressNotFoundException
-     * @throws \App\Shop\Customers\Exceptions\CustomerPaymentChargingErrorException
+     * @throws \App\Models\Shop\Addresses\Exceptions\AddressNotFoundException
+     * @throws \App\Models\Shop\Customers\Exceptions\CustomerPaymentChargingErrorException
      * @codeCoverageIgnore
      */
     public function store(CartCheckoutRequest $request)

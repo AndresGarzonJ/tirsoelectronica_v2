@@ -1,7 +1,7 @@
 <?php
 namespace Database\Seeders;
-use App\Shop\Categories\Category;
-use App\Shop\Products\Product;
+use App\Models\Shop\Categories\Category;
+use App\Models\Shop\Products\Product;
 use Illuminate\Database\Seeder;
 
 class CategoryProductsTableSeeder extends Seeder

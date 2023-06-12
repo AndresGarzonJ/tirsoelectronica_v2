@@ -2,18 +2,18 @@
 
 namespace Tests\Unit\Address;
 
-use App\Shop\Addresses\Address;
-use App\Shop\Addresses\Exceptions\CreateAddressErrorException;
-use App\Shop\Addresses\Exceptions\AddressNotFoundException;
-use App\Shop\Addresses\Repositories\AddressRepository;
-use App\Shop\Addresses\Transformations\AddressTransformable;
-use App\Shop\Cities\Repositories\CityRepository;
-use App\Shop\Customers\Customer;
-use App\Shop\Customers\Repositories\CustomerRepository;
-use App\Shop\Orders\Order;
-use App\Shop\Provinces\Province;
-use App\Shop\Cities\City;
-use App\Shop\Countries\Country;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Addresses\Exceptions\CreateAddressErrorException;
+use App\Models\Shop\Addresses\Exceptions\AddressNotFoundException;
+use App\Models\Shop\Addresses\Repositories\AddressRepository;
+use App\Models\Shop\Addresses\Transformations\AddressTransformable;
+use App\Models\Shop\Cities\Repositories\CityRepository;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Repositories\CustomerRepository;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\Provinces\Province;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Countries\Country;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 

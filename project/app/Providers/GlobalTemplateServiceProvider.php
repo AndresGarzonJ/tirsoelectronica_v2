@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Shop\Carts\Repositories\CartRepository;
-use App\Shop\Carts\ShoppingCart;
-use App\Shop\Categories\Category;
-use App\Shop\Categories\Repositories\CategoryRepository;
-use App\Shop\Employees\Employee;
-use App\Shop\Employees\Repositories\EmployeeRepository;
+use App\Models\Shop\Carts\Repositories\CartRepository;
+use App\Models\Shop\Carts\ShoppingCart;
+use App\Models\Shop\Categories\Category;
+use App\Models\Shop\Categories\Repositories\CategoryRepository;
+use App\Models\Shop\Employees\Employee;
+use App\Models\Shop\Employees\Repositories\EmployeeRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 

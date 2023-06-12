@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Countries;
 
-use App\Shop\Countries\Exceptions\CountryInvalidArgumentException;
-use App\Shop\Countries\Exceptions\CountryNotFoundException;
-use App\Shop\Countries\Repositories\CountryRepository;
-use App\Shop\Provinces\Province;
-use App\Shop\Countries\Country;
-use App\Shop\States\State;
+use App\Models\Shop\Countries\Exceptions\CountryInvalidArgumentException;
+use App\Models\Shop\Countries\Exceptions\CountryNotFoundException;
+use App\Models\Shop\Countries\Repositories\CountryRepository;
+use App\Models\Shop\Provinces\Province;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\States\State;
 use Illuminate\Support\Collection;
 use Tests\TestCase;
 

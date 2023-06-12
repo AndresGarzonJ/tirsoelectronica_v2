@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Admin\Orders;
 
-use App\Shop\Customers\Customer;
-use App\Shop\Orders\Order;
-use App\Shop\Orders\Repositories\OrderRepository;
-use App\Shop\Products\Product;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\Orders\Repositories\OrderRepository;
+use App\Models\Shop\Products\Product;
 use Illuminate\Support\Str;
 use Tests\TestCase;
 

@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Admin\Cities;
 
-use App\Shop\Cities\City;
-use App\Shop\Countries\Country;
-use App\Shop\Provinces\Province;
-use App\Shop\States\State;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\Provinces\Province;
+use App\Models\Shop\States\State;
 use Tests\TestCase;
 
 class CityFeatureTest extends TestCase

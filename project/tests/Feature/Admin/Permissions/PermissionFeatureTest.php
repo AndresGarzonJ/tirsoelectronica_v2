@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\Permissions;
 
-use App\Shop\Permissions\Permission;
+use App\Models\Shop\Permissions\Permission;
 use Tests\TestCase;
 
 class PermissionFeatureTest extends TestCase

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Front\Addresses;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Countries\Repositories\CountryRepository;
-use App\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;
+use App\Models\Shop\Countries\Repositories\CountryRepository;
+use App\Models\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;
 
 class CountryStateController extends Controller
 {

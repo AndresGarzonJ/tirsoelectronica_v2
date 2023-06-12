@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\OrderAddress;
 
-use App\Shop\Carts\Repositories\CartRepository;
-use App\Shop\Carts\ShoppingCart;
-use App\Shop\Orders\Order;
-use App\Shop\Orders\Repositories\OrderRepository;
+use App\Models\Shop\Carts\Repositories\CartRepository;
+use App\Models\Shop\Carts\ShoppingCart;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\Orders\Repositories\OrderRepository;
 use Tests\TestCase;
 
 class OrderAddressUnitTest extends TestCase

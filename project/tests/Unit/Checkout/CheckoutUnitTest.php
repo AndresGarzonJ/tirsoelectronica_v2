@@ -2,12 +2,12 @@
 
 namespace Test\Unit\Checkout;
 
-use App\Shop\Carts\Repositories\CartRepository;
-use App\Shop\Carts\ShoppingCart;
-use App\Shop\Checkout\CheckoutRepository;
-use App\Shop\Orders\Order;
-use App\Shop\Orders\Repositories\OrderRepository;
-use App\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\Carts\Repositories\CartRepository;
+use App\Models\Shop\Carts\ShoppingCart;
+use App\Models\Shop\Checkout\CheckoutRepository;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\Orders\Repositories\OrderRepository;
+use App\Models\Shop\OrderStatuses\OrderStatus;
 use Tests\TestCase;
 
 class CheckoutUnitTest extends TestCase

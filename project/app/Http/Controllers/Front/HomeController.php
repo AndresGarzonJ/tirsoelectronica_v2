@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
-use App\Shop\Products\Product;
-use App\Shop\Products\Transformations\ProductTransformable;
+use App\Models\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
+use App\Models\Shop\Products\Product;
+use App\Models\Shop\Products\Transformations\ProductTransformable;
 
 class HomeController
 {

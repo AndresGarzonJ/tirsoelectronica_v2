@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin\Couriers;
 
-use App\Shop\Couriers\Repositories\CourierRepository;
-use App\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
-use App\Shop\Couriers\Requests\CreateCourierRequest;
-use App\Shop\Couriers\Requests\UpdateCourierRequest;
+use App\Models\Shop\Couriers\Repositories\CourierRepository;
+use App\Models\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
+use App\Models\Shop\Couriers\Requests\CreateCourierRequest;
+use App\Models\Shop\Couriers\Requests\UpdateCourierRequest;
 use App\Http\Controllers\Controller;
 
 class CourierController extends Controller

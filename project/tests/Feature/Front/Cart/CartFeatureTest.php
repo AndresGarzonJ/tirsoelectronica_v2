@@ -2,13 +2,13 @@
 
 namespace Tests\Feature\Front\Cart;
 
-use App\Shop\Addresses\Address;
-use App\Shop\Carts\Repositories\CartRepository;
-use App\Shop\Carts\ShoppingCart;
-use App\Shop\Cities\City;
-use App\Shop\Customers\Customer;
-use App\Shop\ProductAttributes\ProductAttribute;
-use App\Shop\Products\Product;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Carts\Repositories\CartRepository;
+use App\Models\Shop\Carts\ShoppingCart;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\ProductAttributes\ProductAttribute;
+use App\Models\Shop\Products\Product;
 use Illuminate\Auth\Events\Lockout;
 use Tests\TestCase;
 

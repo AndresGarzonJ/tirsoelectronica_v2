@@ -2,11 +2,11 @@
 
 namespace Tests\Unit\Attributes;
 
-use App\Shop\Attributes\Attribute;
-use App\Shop\Attributes\Exceptions\AttributeNotFoundException;
-use App\Shop\Attributes\Exceptions\CreateAttributeErrorException;
-use App\Shop\Attributes\Exceptions\UpdateAttributeErrorException;
-use App\Shop\Attributes\Repositories\AttributeRepository;
+use App\Models\Shop\Attributes\Attribute;
+use App\Models\Shop\Attributes\Exceptions\AttributeNotFoundException;
+use App\Models\Shop\Attributes\Exceptions\CreateAttributeErrorException;
+use App\Models\Shop\Attributes\Exceptions\UpdateAttributeErrorException;
+use App\Models\Shop\Attributes\Repositories\AttributeRepository;
 use Tests\TestCase;
 
 class AttributeUnitTest extends TestCase

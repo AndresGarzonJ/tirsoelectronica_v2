@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Customer;
 use App\Http\Controllers\Controller;
-use App\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
-use App\Shop\Customers\Requests\CreateCustomerRequest;
-use App\Shop\Customers\Requests\RegisterCustomerRequest;
+use App\Models\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
+use App\Models\Shop\Customers\Requests\CreateCustomerRequest;
+use App\Models\Shop\Customers\Requests\RegisterCustomerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;

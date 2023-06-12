@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin\Attributes;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Attributes\Repositories\AttributeRepositoryInterface;
-use App\Shop\AttributeValues\AttributeValue;
-use App\Shop\AttributeValues\Repositories\AttributeValueRepository;
-use App\Shop\AttributeValues\Repositories\AttributeValueRepositoryInterface;
-use App\Shop\AttributeValues\Requests\CreateAttributeValueRequest;
+use App\Models\Shop\Attributes\Repositories\AttributeRepositoryInterface;
+use App\Models\Shop\AttributeValues\AttributeValue;
+use App\Models\Shop\AttributeValues\Repositories\AttributeValueRepository;
+use App\Models\Shop\AttributeValues\Repositories\AttributeValueRepositoryInterface;
+use App\Models\Shop\AttributeValues\Requests\CreateAttributeValueRequest;
 
 class AttributeValueController extends Controller
 {

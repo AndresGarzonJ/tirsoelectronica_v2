@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Front\Addresses;
 
 use App\Http\Controllers\Controller;
-use App\Shop\States\Repositories\StateRepository;
-use App\Shop\States\Repositories\StateRepositoryInterface;
+use App\Models\Shop\States\Repositories\StateRepository;
+use App\Models\Shop\States\Repositories\StateRepositoryInterface;
 
 class StateCityController extends Controller
 {

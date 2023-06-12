@@ -1,6 +1,6 @@
 <?php
 namespace Database\Seeders;
-use App\Shop\Couriers\Courier;
+use App\Models\Shop\Couriers\Courier;
 use Illuminate\Database\Seeder;
 
 class CourierTableSeeder extends Seeder

@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Customer;
 use Illuminate\Support\Str;
 
 $factory->define(Customer::class, function (Faker\Generator $faker) {

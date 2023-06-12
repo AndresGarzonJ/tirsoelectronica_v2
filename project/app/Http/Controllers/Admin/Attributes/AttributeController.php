@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin\Attributes;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Attributes\Exceptions\AttributeNotFoundException;
-use App\Shop\Attributes\Exceptions\CreateAttributeErrorException;
-use App\Shop\Attributes\Exceptions\UpdateAttributeErrorException;
-use App\Shop\Attributes\Repositories\AttributeRepository;
-use App\Shop\Attributes\Repositories\AttributeRepositoryInterface;
-use App\Shop\Attributes\Requests\CreateAttributeRequest;
-use App\Shop\Attributes\Requests\UpdateAttributeRequest;
+use App\Models\Shop\Attributes\Exceptions\AttributeNotFoundException;
+use App\Models\Shop\Attributes\Exceptions\CreateAttributeErrorException;
+use App\Models\Shop\Attributes\Exceptions\UpdateAttributeErrorException;
+use App\Models\Shop\Attributes\Repositories\AttributeRepository;
+use App\Models\Shop\Attributes\Repositories\AttributeRepositoryInterface;
+use App\Models\Shop\Attributes\Requests\CreateAttributeRequest;
+use App\Models\Shop\Attributes\Requests\UpdateAttributeRequest;
 
 class AttributeController extends Controller
 {

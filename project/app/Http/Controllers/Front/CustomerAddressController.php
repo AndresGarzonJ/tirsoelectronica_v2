@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Addresses\Requests\CreateAddressRequest;
-use App\Shop\Addresses\Requests\UpdateAddressRequest;
-use App\Shop\Addresses\Repositories\AddressRepository;
-use App\Shop\Cities\Repositories\Interfaces\CityRepositoryInterface;
-use App\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
-use App\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;
-use App\Shop\Provinces\Repositories\Interfaces\ProvinceRepositoryInterface;
+use App\Models\Shop\Addresses\Requests\CreateAddressRequest;
+use App\Models\Shop\Addresses\Requests\UpdateAddressRequest;
+use App\Models\Shop\Addresses\Repositories\AddressRepository;
+use App\Models\Shop\Cities\Repositories\Interfaces\CityRepositoryInterface;
+use App\Models\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
+use App\Models\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;
+use App\Models\Shop\Provinces\Repositories\Interfaces\ProvinceRepositoryInterface;
 
 class CustomerAddressController extends Controller
 {

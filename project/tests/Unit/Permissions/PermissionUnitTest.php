@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Permissions;
 
-use App\Shop\Permissions\Permission;
-use App\Shop\Permissions\Repositories\PermissionRepository;
-use App\Shop\Roles\Repositories\RoleRepository;
-use App\Shop\Roles\Role;
+use App\Models\Shop\Permissions\Permission;
+use App\Models\Shop\Permissions\Repositories\PermissionRepository;
+use App\Models\Shop\Roles\Repositories\RoleRepository;
+use App\Models\Shop\Roles\Role;
 use Illuminate\Support\Collection;
 use Tests\TestCase;
 

@@ -12,7 +12,7 @@
 */
 
 
-use App\Shop\Roles\Role;
+use App\Models\Shop\Roles\Role;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Role::class, function (Faker\Generator $faker) {
 

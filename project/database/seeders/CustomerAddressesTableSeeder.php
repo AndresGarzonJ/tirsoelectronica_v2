@@ -1,7 +1,7 @@
 <?php
 namespace Database\Seeders;
-use App\Shop\Addresses\Address;
-use App\Shop\Customers\Customer;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Customers\Customer;
 use Illuminate\Database\Seeder;
 
 class CustomerAddressesTableSeeder extends Seeder

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin\Permissions;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Permissions\Repositories\PermissionRepository;
+use App\Models\Shop\Permissions\Repositories\PermissionRepository;
 
 class PermissionController extends Controller
 {

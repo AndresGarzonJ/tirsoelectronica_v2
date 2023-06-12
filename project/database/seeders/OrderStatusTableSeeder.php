@@ -1,6 +1,6 @@
 <?php
 namespace Database\Seeders;
-use App\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\OrderStatuses\OrderStatus;
 use Illuminate\Database\Seeder;
 
 class OrderStatusTableSeeder extends Seeder

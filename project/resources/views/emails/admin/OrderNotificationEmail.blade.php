@@ -34,7 +34,7 @@
                     <td>{{$product->name}}</td>
                     <td>
                         {{$product->description}}
-                        @php($pattr = \App\Shop\ProductAttributes\ProductAttribute::find($product->pivot->product_attribute_id))
+                        @php($pattr = \App\Models\Shop\ProductAttributes\ProductAttribute::find($product->pivot->product_attribute_id))
                         @if(!is_null($pattr))<br>
                         @foreach($pattr->attributesValues as $it)
                             <p class="label label-primary">{{ $it->attribute->name }} : {{ $it->value }}</p>

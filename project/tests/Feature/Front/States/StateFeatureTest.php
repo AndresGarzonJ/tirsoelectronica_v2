@@ -2,9 +2,9 @@
 
 namespace Tests\Feature\Front\States;
 
-use App\Shop\Cities\City;
-use App\Shop\Countries\Country;
-use App\Shop\States\State;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Countries\Country;
+use App\Models\Shop\States\State;
 use Tests\TestCase;
 
 class StateFeatureTest extends TestCase

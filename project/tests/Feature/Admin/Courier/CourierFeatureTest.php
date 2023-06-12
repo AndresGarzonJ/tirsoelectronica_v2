@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Admin\Courier;
 
-use App\Shop\Couriers\Courier;
+use App\Models\Shop\Couriers\Courier;
 use Tests\TestCase;
 
 class CourierFeatureTest extends TestCase

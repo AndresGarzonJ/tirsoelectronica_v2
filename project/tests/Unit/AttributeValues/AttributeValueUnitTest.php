@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\AttributeValues;
 
-use App\Shop\Attributes\Attribute;
-use App\Shop\AttributeValues\AttributeValue;
-use App\Shop\AttributeValues\Repositories\AttributeValueRepository;
+use App\Models\Shop\Attributes\Attribute;
+use App\Models\Shop\AttributeValues\AttributeValue;
+use App\Models\Shop\AttributeValues\Repositories\AttributeValueRepository;
 use Tests\TestCase;
 
 class AttributeValueUnitTest extends TestCase

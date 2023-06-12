@@ -16,7 +16,7 @@
 <section class="container">
     <div class="col-md-12">
         <h2>Hello {{$customer->name}}!</h2>
-        @php($country = \App\Shop\Countries\Country::find($address->country_id))
+        @php($country = \App\Models\Shop\Countries\Country::find($address->country_id))
         <p>This order is for deliver to your: <strong>{{ ucfirst($address->alias) }} <br /></strong></p>
         <p>Address: {{$address->address_1}} {{$address->address_2}} {{$address->city}} {{$address->state_code}}, {{$country->name}}</p>
         <table class="table table-striped" width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -36,7 +36,7 @@
                     <td>{{$product->name}}</td>
                     <td>
                         {{$product->description}}
-                        @php($pattr = \App\Shop\ProductAttributes\ProductAttribute::find($product->pivot->product_attribute_id))
+                        @php($pattr = \App\Models\Shop\ProductAttributes\ProductAttribute::find($product->pivot->product_attribute_id))
                         @if(!is_null($pattr))<br>
                         @foreach($pattr->attributesValues as $it)
                             <p class="label label-primary">{{ $it->attribute->name }} : {{ $it->value }}</p>

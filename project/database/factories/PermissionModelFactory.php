@@ -11,7 +11,7 @@
 |
 */
 
-use App\Shop\Permissions\Permission;
+use App\Models\Shop\Permissions\Permission;
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(Permission::class, function (Faker\Generator $faker) {
 

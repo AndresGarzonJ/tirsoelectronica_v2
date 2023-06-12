@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Categories\Requests;
 
-use App\Shop\Base\BaseFormRequest;
+use App\Models\Shop\Base\BaseFormRequest;
 
 class CreateCategoryRequest extends BaseFormRequest
 {

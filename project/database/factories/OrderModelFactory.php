@@ -13,12 +13,12 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Shop\Addresses\Address;
-use App\Shop\Cities\City;
-use App\Shop\Couriers\Courier;
-use App\Shop\Customers\Customer;
-use App\Shop\Orders\Order;
-use App\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Cities\City;
+use App\Models\Shop\Couriers\Courier;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\OrderStatuses\OrderStatus;
 
 $factory->define(Order::class, function (Faker\Generator $faker) {
 

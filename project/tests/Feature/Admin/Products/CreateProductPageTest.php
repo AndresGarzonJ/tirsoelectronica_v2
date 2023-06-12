@@ -2,10 +2,10 @@
 
 namespace Tests\Feature\Admin\Products;
 
-use App\Shop\Employees\Employee;
-use App\Shop\Employees\Repositories\EmployeeRepository;
-use App\Shop\Roles\Repositories\RoleRepository;
-use App\Shop\Roles\Role;
+use App\Models\Shop\Employees\Employee;
+use App\Models\Shop\Employees\Repositories\EmployeeRepository;
+use App\Models\Shop\Roles\Repositories\RoleRepository;
+use App\Models\Shop\Roles\Role;
 use Tests\TestCase;
 
 class CreateProductPageTest extends TestCase

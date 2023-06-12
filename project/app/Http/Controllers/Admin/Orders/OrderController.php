@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin\Orders;
 
-use App\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
-use App\Shop\Addresses\Transformations\AddressTransformable;
-use App\Shop\Couriers\Courier;
-use App\Shop\Couriers\Repositories\CourierRepository;
-use App\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
-use App\Shop\Customers\Customer;
-use App\Shop\Customers\Repositories\CustomerRepository;
-use App\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
-use App\Shop\Orders\Order;
-use App\Shop\Orders\Repositories\Interfaces\OrderRepositoryInterface;
-use App\Shop\Orders\Repositories\OrderRepository;
-use App\Shop\Orders\Requests\UpdateOrderRequest;
-use App\Shop\OrderStatuses\OrderStatus;
-use App\Shop\OrderStatuses\Repositories\Interfaces\OrderStatusRepositoryInterface;
-use App\Shop\OrderStatuses\Repositories\OrderStatusRepository;
+use App\Models\Shop\Addresses\Repositories\Interfaces\AddressRepositoryInterface;
+use App\Models\Shop\Addresses\Transformations\AddressTransformable;
+use App\Models\Shop\Couriers\Courier;
+use App\Models\Shop\Couriers\Repositories\CourierRepository;
+use App\Models\Shop\Couriers\Repositories\Interfaces\CourierRepositoryInterface;
+use App\Models\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Repositories\CustomerRepository;
+use App\Models\Shop\Customers\Repositories\Interfaces\CustomerRepositoryInterface;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\Orders\Repositories\Interfaces\OrderRepositoryInterface;
+use App\Models\Shop\Orders\Repositories\OrderRepository;
+use App\Models\Shop\Orders\Requests\UpdateOrderRequest;
+use App\Models\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\OrderStatuses\Repositories\Interfaces\OrderStatusRepositoryInterface;
+use App\Models\Shop\OrderStatuses\Repositories\OrderStatusRepository;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;

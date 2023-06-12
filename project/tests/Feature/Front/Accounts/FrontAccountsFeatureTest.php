@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Front\Accounts;
 
-use App\Shop\Customers\Customer;
+use App\Models\Shop\Customers\Customer;
 use Illuminate\Auth\Events\Lockout;
 use Tests\TestCase;
 

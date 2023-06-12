@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Shop\Countries\Country;
+use App\Models\Shop\Countries\Country;
 use Illuminate\Support\Str;
 
 $factory->define(Country::class, function (Faker\Generator $faker) {

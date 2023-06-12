@@ -2,18 +2,18 @@
 
 namespace Tests\Unit\Orders;
 
-use App\Shop\Addresses\Address;
-use App\Shop\Couriers\Courier;
-use App\Shop\Customers\Customer;
+use App\Models\Shop\Addresses\Address;
+use App\Models\Shop\Couriers\Courier;
+use App\Models\Shop\Customers\Customer;
 use App\Events\OrderCreateEvent;
 use App\Mail\sendEmailNotificationToAdminMailable;
 use App\Mail\SendOrderToCustomerMailable;
-use App\Shop\Orders\Exceptions\OrderInvalidArgumentException;
-use App\Shop\Orders\Exceptions\OrderNotFoundException;
-use App\Shop\Orders\Order;
-use App\Shop\Orders\Repositories\OrderRepository;
-use App\Shop\OrderStatuses\OrderStatus;
-use App\Shop\Products\Product;
+use App\Models\Shop\Orders\Exceptions\OrderInvalidArgumentException;
+use App\Models\Shop\Orders\Exceptions\OrderNotFoundException;
+use App\Models\Shop\Orders\Order;
+use App\Models\Shop\Orders\Repositories\OrderRepository;
+use App\Models\Shop\OrderStatuses\OrderStatus;
+use App\Models\Shop\Products\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;

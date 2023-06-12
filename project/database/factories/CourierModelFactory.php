@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Shop\Couriers\Courier;
+use App\Models\Shop\Couriers\Courier;
 
 $factory->define(Courier::class, function (Faker\Generator $faker) {
 

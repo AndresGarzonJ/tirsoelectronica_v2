@@ -1,7 +1,7 @@
 <?php
 namespace Database\Seeders;
-use App\Shop\Attributes\Attribute;
-use App\Shop\AttributeValues\AttributeValue;
+use App\Models\Shop\Attributes\Attribute;
+use App\Models\Shop\AttributeValues\AttributeValue;
 use Illuminate\Database\Seeder;
 
 class AttributeTableSeeder extends Seeder

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin\Brands;
 
 use App\Http\Controllers\Controller;
-use App\Shop\Brands\Repositories\BrandRepository;
-use App\Shop\Brands\Repositories\BrandRepositoryInterface;
-use App\Shop\Brands\Requests\CreateBrandRequest;
-use App\Shop\Brands\Requests\UpdateBrandRequest;
+use App\Models\Shop\Brands\Repositories\BrandRepository;
+use App\Models\Shop\Brands\Repositories\BrandRepositoryInterface;
+use App\Models\Shop\Brands\Requests\CreateBrandRequest;
+use App\Models\Shop\Brands\Requests\UpdateBrandRequest;
 
 class BrandController extends Controller
 {
@@ -70,7 +70,7 @@ class BrandController extends Controller
      * @param $id
      *
      * @return \Illuminate\Http\RedirectResponse
-     * @throws \App\Shop\Brands\Exceptions\UpdateBrandErrorException
+     * @throws \App\Models\Shop\Brands\Exceptions\UpdateBrandErrorException
      */
     public function update(UpdateBrandRequest $request, $id)
     {
