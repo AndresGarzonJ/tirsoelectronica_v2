@@ -45,7 +45,8 @@ trait ProductTransformable
         if ($path == null) {
             return $path;
         }
-        if (file_exists("/var/www/storage/app/public/" . $path)) {
+        // if (file_exists("/var/www/storage/app/public/" . $path)) {
+        if (file_exists("D:/tirsoelectronica_v2/project/storage/app/public/" . $path)) {
             return asset("storage/$path");
         }
         return asset("images/NoData.png");
