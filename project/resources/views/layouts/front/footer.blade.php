@@ -5,7 +5,7 @@
 
                 <ul class="footer-menu">
                     <li> <a href="{{ route('accounts', ['tab' => 'profile']) }}">Your account</a>  </li>
-                    <li> <a href="">Contact us</a>  </li>
+                    <li> <a href="{{ route('contact') }}">Contact us</a>  </li>
                     <li> <a href="">Terms of service</a>  </li>
                 </ul>
 

@@ -1,0 +1,76 @@
+-------------------11 de Junio de 2023
+
+	Aplicar migraciones y seeders con la db vacia
+		php artisan migrate --seed
+
+	Logica de la pag de contactos
+			ver **** http://www.videorockola.com/consultoria/
+
+			1. php artisan make:migration create_contacts_table --create=contacts
+			2. php artisan make:model Contacts/Contact
+			3. php artisan make:controller Admin/Contacts/ContactController --resource
+			4. php artisan make:seeder ContactsTableSeeder
+			5. Agregar a database/seeds/DatabaseSeeder
+			6. Se agragan las clases (Repositorios) de Contact en app/providers/RepositoryServiceProvider.php
+					ContactRepositoryInterface
+					ContactRepository
+
+			7. en la vista views/front/contacto.blade.php 
+					se colocaron los datos traidos de la db
+
+					Los iconos de las redes sociales tocó agregarles el css manualmente
+			8. No se creo el controlador de Front
+			9. Ya funciona! 
+			10. Como en el footer se utiliza los links de las redes sociales que estan en Contact.. y el footer se utiliza en todas las vistas, entonces contact se agrega a 
+				app/providers/GlobalTemplateServiceProvider.php
+			De esta manera los links de las redes sociales siempre los podra acceder el layout de footer
+
+			11. php artisan migrate
+			12. php artisan db:seed --class=ContactTableSeeder
+	
+	Eliminar cache
+		php artisan cache:clear
+			Solucion ERROR Failed to clear cache. Make sure you have the appropriate permissions.
+				Crear la carpeta data
+					project\storage\framework\cache\data
+		php artisan config:clear
+		php artisan config:cache
+	
+	Error SQLSTATE[42S02]
+		https://laravel.com/docs/5.8/eloquent#eloquent-model-conventions
+	
+	+-------------------------------+
+	|  Resumen archivos modificados |
+	+-------------------------------+
+		modified:   docs/notas_progreso_v2_Andres.txt
+        new file:   project/app/Http/Controllers/Admin/Contact/ContactController.php
+        modified:   project/app/Http/Controllers/Front/HomeController.php
+        new file:   project/app/Models/Contact/Contact.php
+        new file:   project/app/Models/Contact/Exceptions/ContactInvalidArgumentException.php        
+        new file:   project/app/Models/Contact/Exceptions/ContactNotFoundException.php
+        new file:   project/app/Models/Contact/Repositories/ContactRepository.php
+        new file:   project/app/Models/Contact/Repositories/Interfaces/ContactRepositoryInterface.php
+        new file:   project/app/Models/Contact/Requests/CreateContactRequest.php
+        new file:   project/app/Models/Contact/Requests/UpdateContactRequest.php
+        new file:   project/app/Models/Contact/Transformations/ContactTransformable.php
+        modified:   project/app/Providers/GlobalTemplateServiceProvider.php
+        modified:   project/app/Providers/RepositoryServiceProvider.php
+        new file:   project/database/migrations/2023_06_12_001355_create_contact_table.php
+        new file:   project/database/seeders/ContactTableSeeder.php
+        modified:   project/database/seeders/DatabaseSeeder.php
+        new file:   project/resources/views/admin/contact/edit.blade.php
+        new file:   project/resources/views/front/contact.blade.php
+        modified:   project/resources/views/layouts/admin/sidebar.blade.php
+        modified:   project/resources/views/layouts/front/footer.blade.php
+        modified:   project/routes/web.php
+
+
+
+Tareas:
+	1. Agregar en admin la vista/seccion para mostrar los datos de contacto
+
+
+john@doe.com / secret (role:superadmin)
+admin@doe.com / secret (role:admin)
+clerk@doe.com / secret (role:user)
+php artisan serve

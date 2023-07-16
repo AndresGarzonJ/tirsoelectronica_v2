@@ -164,6 +164,25 @@
             </ul>
         </li>
             @endif
+            {{-- Contact Section --}}
+            @if($user->hasRole('admin|superadmin'))
+            <li
+                class="treeview @if(request()->segment(2) == 'contact') active @endif">
+                <a href="#">
+                    <i class="fa fa-phone"></i> <span>Contact Information</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    {{-- <li><a href="{{ route('admin.contact.index') }}"><i class="fa fa-eye"></i> See </a></li> --}}
+                    <li><a href="{{ route('admin.contact.index') }}"><i class="fa fa-pencil"></i> Edit </a></li>
+                </ul>
+            </li>
+            
+            {{-- Contact Section --}}
+            
+            @endif
             <li class="treeview @if(request()->segment(2) == 'countries' || request()->segment(2) == 'provinces') active @endif">
                 <a href="#">
                     <i class="fa fa-flag"></i> <span>Countries</span>

@@ -8,6 +8,8 @@ use App\Models\Shop\Categories\Category;
 use App\Models\Shop\Categories\Repositories\CategoryRepository;
 use App\Models\Shop\Employees\Employee;
 use App\Models\Shop\Employees\Repositories\EmployeeRepository;
+use App\Models\Contact\Contact;
+use App\Models\Contact\Repositories\ContactRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -36,6 +38,7 @@ class GlobalTemplateServiceProvider extends ServiceProvider
         view()->composer(['layouts.front.app', 'front.categories.sidebar-category'], function ($view) {
             $view->with('categories', $this->getCategories());
             $view->with('cartCount', $this->getCartCount());
+            $view->with('contact', $this->getContact());
         });
 
         /**
@@ -67,6 +70,16 @@ class GlobalTemplateServiceProvider extends ServiceProvider
         view()->composer(['layouts.front.category-nav'], function ($view) {
             $view->with('categories', $this->getCategories());
         });
+    }
+
+    /**
+     * Get contact information
+     *
+     */
+    private function getContact()
+    {
+        $contactRepo = new ContactRepository(new Contact);
+        return $contactRepo->findContactById(1);
     }
 
     /**
