@@ -25,6 +25,7 @@
 5. php artisan storage:link
 6. php artisan serve
 --------------------------------------------------------------
+--------------------------------------------------------------
 
 Opcion Docker
 0. Si tiene MySQL instalado localmente. Entonces, apagar el servicio
@@ -97,6 +98,24 @@ Opcion Docker
 	php artisan storage:link
 	npm run dev
 10. Ingresar al http://localhost:8000
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+Publicar un paquete de PHP en https://packagist.org/
+
+	1. Crear un Fork del repositorio/paquete objetivo
+	2. Modificar el nombre del paquete en composer.json
+	3. Crear un tag/release del (en tu) repositorio
+	4. Ir a https://packagist.org/packages/submit
+	5. Colocar la url de tu repositorio y check
+	6. Listo!
+
+	Adicional: Sincronizar GitHub para actualizar paquetes automaticamente
+	GitHub Hook
+	https://packagist.org/about#how-to-update-packages
+
+--------------------------------------------------------------
+--------------------------------------------------------------
 
 john@doe.com / secret (role:superadmin)
 admin@doe.com / secret (role:admin)
