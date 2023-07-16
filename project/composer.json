@@ -23,7 +23,7 @@
     "doctrine/dbal": "^3.6.2",
     "fruitcake/laravel-cors": "^v3.0.0",
     "guzzlehttp/guzzle": "^7.7.0",
-    "jsdecena/baserepo": "^v2.0.0",
+    "andresgarzonj/baserepo": "^v1.0.0",
     "jsdecena/mcpro": "1.1.0",
     "kalnoy/nestedset": "^v6.0.2",
     "laravel/framework": "^9.0",
