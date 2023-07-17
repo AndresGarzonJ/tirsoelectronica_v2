@@ -104,11 +104,18 @@ Opcion Docker
 Publicar un paquete de PHP en https://packagist.org/
 
 	1. Crear un Fork del repositorio/paquete objetivo
-	2. Modificar el nombre del paquete en composer.json
-	3. Crear un tag/release del (en tu) repositorio
-	4. Ir a https://packagist.org/packages/submit
-	5. Colocar la url de tu repositorio y check
-	6. Listo!
+	2. Modificar el nombre del paquete en composer.json. Tambien cambiarlo donde aparezca (Primera letra mayuscula)
+	3. En todo el proyecto - buscar el nombre viejo para actualizarlo (tener encuenta las letrasMayusculas) 
+	4. Crear un tag/release del (en tu) repositorio
+	5. Ir a https://packagist.org/packages/submit
+	6. Colocar la url de tu repositorio y check
+	7. Listo!
+
+	8. En el proyecto donde se va a usar el paquete publicado:
+		- Actualizar el (nombre del paquete en) composer.json
+		- Realizar el paso 3
+		- Ejecutar en la carpeta del proyecto:
+			composer update
 
 	Adicional: Sincronizar GitHub para actualizar paquetes automaticamente
 	GitHub Hook
