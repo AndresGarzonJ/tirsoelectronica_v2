@@ -4,7 +4,7 @@ namespace App\Models\Shop\Dummies\Repositories;
 
 use App\Models\Shop\Dummies\Dummy;
 use Illuminate\Support\Collection;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use App\Models\Shop\Dummies\Repositories\Interfaces\DummyRepositoryInterface;

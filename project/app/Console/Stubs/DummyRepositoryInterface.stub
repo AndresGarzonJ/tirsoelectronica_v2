@@ -4,7 +4,7 @@ namespace App\Models\Shop\Dummies\Repositories\Interfaces;
 
 use App\Models\Shop\Dummies\Dummy;
 use Illuminate\Support\Collection;
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 
 interface DummyRepositoryInterface extends BaseRepositoryInterface
 {

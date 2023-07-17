@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Couriers\Repositories\Interfaces;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Couriers\Courier;
 use Illuminate\Support\Collection;
 

@@ -4,7 +4,7 @@ namespace App\Models\Shop\Categories\Repositories;
 
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Categories\Category;
 use App\Models\Shop\Categories\Exceptions\CategoryInvalidArgumentException;
 use App\Models\Shop\Categories\Exceptions\CategoryNotFoundException;

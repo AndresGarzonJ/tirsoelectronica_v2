@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Provinces\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Countries\Country;
 use App\Models\Shop\Provinces\Exceptions\ProvinceNotFoundException;
 use App\Models\Shop\Provinces\Province;

@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\OrderStatuses\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\OrderStatuses\Exceptions\OrderStatusInvalidArgumentException;
 use App\Models\Shop\OrderStatuses\Exceptions\OrderStatusNotFoundException;
 use App\Models\Shop\OrderStatuses\OrderStatus;

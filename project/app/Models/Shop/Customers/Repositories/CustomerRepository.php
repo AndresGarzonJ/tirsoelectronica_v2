@@ -3,7 +3,7 @@
 namespace App\Models\Shop\Customers\Repositories;
 
 use App\Models\Shop\Addresses\Address;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Customers\Customer;
 use App\Models\Shop\Customers\Exceptions\CreateCustomerInvalidArgumentException;
 use App\Models\Shop\Customers\Exceptions\CustomerNotFoundException;

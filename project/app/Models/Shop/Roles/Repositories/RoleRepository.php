@@ -1,7 +1,7 @@
 <?php
 namespace App\Models\Shop\Roles\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Permissions\Permission;
 use App\Models\Shop\Roles\Exceptions\CreateRoleErrorException;
 use App\Models\Shop\Roles\Exceptions\DeleteRoleErrorException;

@@ -5,7 +5,7 @@ namespace App\Models\Shop\Orders\Repositories;
 use App\Models\Shop\Carts\Repositories\CartRepository;
 use App\Models\Shop\Carts\ShoppingCart;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Employees\Employee;
 use App\Models\Shop\Employees\Repositories\EmployeeRepository;
 use App\Events\OrderCreateEvent;

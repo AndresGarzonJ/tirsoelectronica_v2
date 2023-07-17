@@ -3,7 +3,7 @@
 namespace App\Models\Contact\Repositories;
 
 //-del- use App\Models\Shop\Base\BaseRepository;
-use Jsdecena\Baserepo\BaseRepository; 
+use Andresgarzonj\Baserepo\BaseRepository; 
 use App\Models\Contact\Exceptions\ContactInvalidArgumentException;
 use App\Models\Contact\Exceptions\ContactNotFoundException;
 use App\Models\Contact\Contact;

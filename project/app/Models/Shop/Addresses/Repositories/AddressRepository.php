@@ -14,7 +14,7 @@ use App\Models\Shop\Provinces\Province;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Collection;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 
 class AddressRepository extends BaseRepository implements AddressRepositoryInterface
 {

@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\OrderStatuses\Repositories\Interfaces;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\OrderStatuses\OrderStatus;
 use Illuminate\Support\Collection;
 

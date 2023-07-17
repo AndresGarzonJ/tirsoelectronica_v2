@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Brands\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Brands\Brand;
 use App\Models\Shop\Brands\Exceptions\BrandNotFoundErrorException;
 use App\Models\Shop\Brands\Exceptions\CreateBrandErrorException;

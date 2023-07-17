@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Provinces\Repositories\Interfaces;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Countries\Country;
 use App\Models\Shop\Provinces\Province;
 use Illuminate\Support\Collection;

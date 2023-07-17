@@ -4,7 +4,7 @@ namespace App\Models\Shop\AttributeValues\Repositories;
 
 use App\Models\Shop\Attributes\Attribute;
 use App\Models\Shop\AttributeValues\AttributeValue;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use Illuminate\Support\Collection;
 
 class AttributeValueRepository extends BaseRepository implements AttributeValueRepositoryInterface

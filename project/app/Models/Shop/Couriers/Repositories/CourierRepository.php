@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Couriers\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Couriers\Courier;
 use App\Models\Shop\Couriers\Exceptions\CourierInvalidArgumentException;
 use App\Models\Shop\Couriers\Exceptions\CourierNotFoundException;

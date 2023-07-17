@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\ProductAttributes\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\ProductAttributes\Exceptions\ProductAttributeNotFoundException;
 use App\Models\Shop\ProductAttributes\ProductAttribute;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

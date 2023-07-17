@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Permissions\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Permissions\Exceptions\CreatePermissionErrorException;
 use App\Models\Shop\Permissions\Exceptions\DeletePermissionErrorException;
 use App\Models\Shop\Permissions\Exceptions\PermissionNotFoundErrorException;

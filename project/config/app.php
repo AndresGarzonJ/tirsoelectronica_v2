@@ -154,7 +154,7 @@ return [
         Jsdecena\MCPro\McproServiceProvider::class,
         // Jsdecena\MailChimp\MailChimpServiceProvider::class,
         // Laravel\Cashier\CashierServiceProvider::class,
-        Jsdecena\Baserepo\BaseRepositoryProvider::class,
+        Andresgarzonj\Baserepo\BaseRepositoryProvider::class,
         \Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*

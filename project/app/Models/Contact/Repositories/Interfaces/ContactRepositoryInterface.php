@@ -3,7 +3,7 @@
 namespace App\Models\Contact\Repositories\Interfaces;
 
 //-del- use App\Models\Shop\Base\Interfaces\BaseRepositoryInterface;
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Contact\Contact;
 use Illuminate\Http\UploadedFile; 
 use Illuminate\Support\Collection;

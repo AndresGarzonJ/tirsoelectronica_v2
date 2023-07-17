@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Brands\Repositories;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Brands\Brand;
 use App\Models\Shop\Products\Product;
 use Illuminate\Support\Collection;

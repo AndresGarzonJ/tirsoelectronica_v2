@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Cities\Repositories\Interfaces;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Cities\City;
 
 interface CityRepositoryInterface extends BaseRepositoryInterface

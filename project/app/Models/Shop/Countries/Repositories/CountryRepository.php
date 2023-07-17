@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Countries\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Countries\Exceptions\CountryInvalidArgumentException;
 use App\Models\Shop\Countries\Exceptions\CountryNotFoundException;
 use App\Models\Shop\Countries\Repositories\Interfaces\CountryRepositoryInterface;

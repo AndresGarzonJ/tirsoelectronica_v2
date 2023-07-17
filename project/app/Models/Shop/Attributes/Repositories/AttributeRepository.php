@@ -7,7 +7,7 @@ use App\Models\Shop\Attributes\Exceptions\AttributeNotFoundException;
 use App\Models\Shop\Attributes\Exceptions\CreateAttributeErrorException;
 use App\Models\Shop\Attributes\Exceptions\UpdateAttributeErrorException;
 use App\Models\Shop\AttributeValues\AttributeValue;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Collection;
 use Illuminate\Database\QueryException;

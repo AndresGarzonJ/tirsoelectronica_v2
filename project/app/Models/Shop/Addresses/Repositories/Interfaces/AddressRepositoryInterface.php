@@ -8,7 +8,7 @@ use App\Models\Shop\Countries\Country;
 use App\Models\Shop\Customers\Customer;
 use App\Models\Shop\Provinces\Province;
 use Illuminate\Support\Collection;
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 
 interface AddressRepositoryInterface extends BaseRepositoryInterface
 {

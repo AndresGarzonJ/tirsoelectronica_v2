@@ -6,7 +6,7 @@ use App\Models\Shop\AttributeValues\AttributeValue;
 use App\Models\Shop\Products\Exceptions\ProductCreateErrorException;
 use App\Models\Shop\Products\Exceptions\ProductUpdateErrorException;
 use App\Models\Shop\Tools\UploadableTrait;
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Brands\Brand;
 use App\Models\Shop\ProductAttributes\ProductAttribute;
 use App\Models\Shop\ProductImages\ProductImage;

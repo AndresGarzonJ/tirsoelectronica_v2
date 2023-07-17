@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Carts\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Carts\Exceptions\ProductInCartNotFoundException;
 use App\Models\Shop\Carts\Repositories\Interfaces\CartRepositoryInterface;
 use App\Models\Shop\Carts\ShoppingCart;

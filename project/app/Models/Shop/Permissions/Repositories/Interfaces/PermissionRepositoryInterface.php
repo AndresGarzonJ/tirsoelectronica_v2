@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Permissions\Repositories\Interfaces;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Permissions\Permission;
 use Illuminate\Support\Collection;
 

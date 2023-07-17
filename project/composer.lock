@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/AndresGarzonJ/Laravel-baserepo.git",
-                "reference": "3509d3591a85a865290e331295c763452ce55e71"
+                "reference": "dce42feeffed812e64cc55189304af65531dc241"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AndresGarzonJ/Laravel-baserepo/zipball/3509d3591a85a865290e331295c763452ce55e71",
-                "reference": "3509d3591a85a865290e331295c763452ce55e71",
+                "url": "https://api.github.com/repos/AndresGarzonJ/Laravel-baserepo/zipball/dce42feeffed812e64cc55189304af65531dc241",
+                "reference": "dce42feeffed812e64cc55189304af65531dc241",
                 "shasum": ""
             },
             "require": {
@@ -34,13 +34,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Jsdecena\\Baserepo\\BaseRepositoryProvider"
+                        "Andresgarzonj\\Baserepo\\BaseRepositoryProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Jsdecena\\Baserepo\\": "src/"
+                    "Andresgarzonj\\Baserepo\\": "src/"
                 },
                 "classmap": [
                     "tests/database/seeds",
@@ -61,7 +61,7 @@
             "support": {
                 "source": "https://github.com/AndresGarzonJ/Laravel-baserepo/tree/v1.0.0"
             },
-            "time": "2023-07-16T03:02:16+00:00"
+            "time": "2023-07-17T06:48:20+00:00"
         },
         {
             "name": "andresgarzonj/shoppingcart",

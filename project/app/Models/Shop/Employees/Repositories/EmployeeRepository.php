@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Employees\Repositories;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Employees\Employee;
 use App\Models\Shop\Employees\Exceptions\EmployeeNotFoundException;
 use App\Models\Shop\Employees\Repositories\Interfaces\EmployeeRepositoryInterface;

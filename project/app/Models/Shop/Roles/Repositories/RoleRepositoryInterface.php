@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Roles\Repositories;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Permissions\Permission;
 use App\Models\Shop\Roles\Role;
 use Illuminate\Support\Collection;

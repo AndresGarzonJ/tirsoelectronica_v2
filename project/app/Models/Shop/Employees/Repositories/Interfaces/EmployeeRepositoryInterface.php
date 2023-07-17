@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\Employees\Repositories\Interfaces;
 
-use Jsdecena\Baserepo\BaseRepositoryInterface;
+use Andresgarzonj\Baserepo\BaseRepositoryInterface;
 use App\Models\Shop\Employees\Employee;
 use Illuminate\Support\Collection;
 

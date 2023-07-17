@@ -2,7 +2,7 @@
 
 namespace App\Models\Shop\ProductImages;
 
-use Jsdecena\Baserepo\BaseRepository;
+use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Shop\Products\Product;
 
 class ProductImageRepository extends BaseRepository
