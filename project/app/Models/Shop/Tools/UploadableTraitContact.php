@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Models\Shop\Tools;
+
+use Illuminate\Http\UploadedFile;
+
+trait UploadableTraitContact
+{
+    /**
+     * Upload a single file in the server
+     *
+     * @param UploadedFile $file
+     * @param null $folder
+     * @param string $disk
+     * @param null $filename
+     * @return false|string
+     */
+    public function uploadOne(UploadedFile $file, $folder = null, $disk = 'public', $filename = null)
+    {
+        $name = !is_null($filename) ? $filename : rand(0, 9999999);
+
+        return $file->storeAs(
+            $folder,
+            $name . "." . $file->getClientOriginalExtension(),
+            $disk
+        );
+    }
+
+    /**
+     * @param UploadedFile $file
+     *
+     * @param string $folder
+     * @param string $disk
+     *
+     * @return false|string
+     */
+    public function storeFile(UploadedFile $file, $folder = 'contact', $disk = 'public')
+    {
+        return $file->store($folder, ['disk' => $disk]);
+    }
+}
