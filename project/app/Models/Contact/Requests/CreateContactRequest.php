@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models\Contact\Requests;
- 
+
 use App\Models\Shop\Base\BaseFormRequest;
 
 class CreateContactRequest extends BaseFormRequest
@@ -14,12 +14,11 @@ class CreateContactRequest extends BaseFormRequest
     public function rules()
     {
         return [
-            'name_proprietary' => ['required'],            
-            'description'  => ['required'],
-            'cover' => ['required', 'file', 'image:png,jpeg,jpg,gif'],
-            'address'  => ['required'],
-            'e_mail' => ['required'],
-            'telephone_number_1' => ['required']
+            'name_proprietary' => ['required'],
+            'name_enterprise' => ['required'],
+            'name_headquarter' => ['required', 'unique:contact'],
+            'address' => ['required', 'unique:contact'],
+            'cover' => ['required', 'file', 'image:png,jpeg,jpg,gif']
         ];
     }
 }
