@@ -18,6 +18,7 @@ class CreateContactTable extends Migration
             $table->string('cover')->nullable();
             $table->string('name_proprietary');
             $table->string('name_enterprise');
+            $table->string('name_headquarter');
             $table->text('description')->nullable();
             $table->string('address');
             $table->string('e_mail');

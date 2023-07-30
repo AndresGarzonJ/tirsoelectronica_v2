@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\UploadedFile;
 use Faker\Factory as Faker;
@@ -23,6 +23,7 @@ class ContactTableSeeder extends Seeder
 	    \DB::table('contact')->insert(array(
 			'name_proprietary' => 'Tirso Mazabuel',
 			'name_enterprise' => 'TirSolutions',
+			'name_headquarter' => 'Principal',
 			'description' => $faker->paragraph,
 			'cover' => $file->getFilename() . '.'. $file->getClientOriginalExtension(),
 			'address' => 'Calle 75 # 45 - 45, Popayán - Cauca - Colombia',
