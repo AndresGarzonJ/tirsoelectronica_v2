@@ -2,6 +2,6 @@
 
 namespace App\Models\Contact\Exceptions;
 
-class ContactNotFoundException extends \Exception
+class ContactUpdateErrorException extends \Exception
 {
 }
