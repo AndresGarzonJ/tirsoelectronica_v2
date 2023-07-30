@@ -90,12 +90,11 @@
                     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
                         <div class="contact-us-right">
                             <!-- <h2 class="title-sidebar">Contact Info</h2> -->
-                            @if(isset($contact->cover))
-                                <img  id="main-image" class="img-responsive"
-                                     src="{{ asset("storage/$contact->cover") }}?w=400"
-                                     alt="{{ $contact->name_proprietary }}">
-                            @endif 
-
+                            @if(!is_null($contact->cover))
+                                <img id="main-image" class="img-responsive" src="{{ $contact->cover }}?w=400"
+                                alt="{{ $contact->name_proprietary }}">
+                            @endif
+                            <div class="row"></div>
                             <h5 class="title-sidebar">{{ $contact->name_proprietary }}</h5>
                             <p>Representante Legal de {{ $contact->name_enterprise }}</p>  
 
