@@ -34,7 +34,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
             Route::namespace('Contact')->group(function () {
                 Route::resource('contact', 'ContactController'); 
                 Route::get('remove-image-contact', 'ContactController@removeImage')->name('contact.remove.image');
-                Route::get('remove-image-thumb-contact', 'ContactController@removeThumbnail')->name('contact.remove.thumb');
             });
             Route::namespace('Customers')->group(function () {
                 Route::resource('customers', 'CustomerController');
@@ -81,7 +80,7 @@ Route::namespace('Auth')->group(function () {
 
 Route::namespace('Front')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/contact','HomeController@viewContact')->name('contact');
+    Route::get('/contact','ContactController@index')->name('contact');
     Route::group(['middleware' => ['auth', 'web']], function () {
 
         Route::namespace('Payments')->group(function () {

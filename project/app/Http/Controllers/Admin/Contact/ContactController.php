@@ -2,50 +2,51 @@
 
 namespace App\Http\Controllers\Admin\Contact;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-use App\Models\Contact\Contact;
+use App\Models\Contact\Exceptions\ContactUpdateErrorException;
 use App\Models\Contact\Repositories\Interfaces\ContactRepositoryInterface;
 use App\Models\Contact\Repositories\ContactRepository;
-use App\Models\Contact\Requests\CreateContactRequest;
-use App\Models\Contact\Requests\UpdateContactRequest; 
-use App\Models\Contact\Transformations\ContactTransformable; 
-
-use App\Models\Shop\Tools\UploadableTrait;
+use App\Models\Contact\Requests\UpdateContactRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Contact\Transformations\ContactTransformable;
+use App\Models\Shop\Tools\UploadableTraitContact;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use Intervention\Image\ImageManagerStatic;
 
 class ContactController extends Controller
 {
-    use ContactTransformable, UploadableTrait; 
+    use ContactTransformable, UploadableTraitContact;
 
-     /**
+    /**
      * @var ContactRepositoryInterface
      */
     private $contactRepo;
 
     /**
      * ContactController constructor.
+     *
      * @param ContactRepositoryInterface $contactRepository
      */
-    public function __construct(ContactRepositoryInterface $contactRepository) 
-    {
-        $this->contactRepo = $contactRepository;        
+    public function __construct(
+        ContactRepositoryInterface $contactRepository
+    ) {
+        $this->contactRepo = $contactRepository;
+        $this->middleware(['permission:update-contact, guard:employee'], ['only' => ['index', 'update']]);
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        $contact =  $this->contactRepo->findContactById(1);
+        // public function edit($id)
+        $contact = $this->contactRepo->findContactById(1);
 
         return view('admin.contact.edit', [
             'contact' => $contact
-                        
         ]);
     }
 
@@ -54,47 +55,33 @@ class ContactController extends Controller
      *
      * @param  UpdateContactRequest $request
      * @param  int $id 
-     * @return \Illuminate\Http\Response
+     * 
+     * @return RedirectResponse
+     * @throws ContactUpdateErrorException
      */
     public function update(UpdateContactRequest $request, int $id)
     {
         $contact = $this->contactRepo->findContactById($id);
-
-        $data['name_proprietary'] = $request->input('name_proprietary');
-        $data['name_enterprise'] = $request->input('name_enterprise');
-        $data['description'] = $request->input('description');
-        $data['address'] = $request->input('address');
-        $data['e_mail'] = $request->input('e_mail');
-        $data['telephone_number_1'] = $request->input('telephone_number_1'); 
-        $data['telephone_number_2'] = $request->input('telephone_number_2');
-        $data['telephone_number_3'] = $request->input('telephone_number_3');
-        $data['profile_youtube'] = $request->input('profile_youtube');
-        $data['profile_twitter'] = $request->input('profile_twitter');
-        $data['profile_mercadolibre'] = $request->input('profile_mercadolibre');
-        $data['profile_facebook'] = $request->input('profile_facebook');
-        
-        
+        $contactRepo = new ContactRepository($contact);
+        $data = $request->except('_token', '_method');
         if ($request->hasFile('cover') && $request->file('cover') instanceof UploadedFile) {
             $data['cover'] = $this->contactRepo->saveCoverImage($request->file('cover'));
         }
-
-        //$this->saveContactImages($request, $contact);
-
-        $this->contactRepo->updateContact($data, $id);
-
-        $request->session()->flash('message', 'Update successful');
-
-        return redirect()->route('admin.contact.index');
+        $contactRepo->updateContact($data);
+        return redirect()->route('admin.contact.index')->with('message', 'Update successful');
     }
 
     /**
      * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * 
+     * @return RedirectResponse
      */
     public function removeImage(Request $request)
     {
-        $this->contactRepo->deleteFile($request->only('contact', 'image'), 'uploads');
-        request()->session()->flash('message', 'Image delete successful');
-        
+        $contact = $this->contactRepo->findOneOrFail($request->input('contact_id'));
+        $contact->cover = null;
+        $contact->save();
+
+        return redirect()->back()->with('message', 'Image delete successful');
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Models\Contact\Repositories;
 
-// use App\Models\Contact\Exceptions\ContactCreateErrorException;
+use App\Models\Contact\Exceptions\ContactCreateErrorException;
 use App\Models\Contact\Exceptions\ContactUpdateErrorException;
 use Andresgarzonj\Baserepo\BaseRepository;
 use App\Models\Contact\Exceptions\ContactNotFoundException;
@@ -13,8 +13,6 @@ use App\Models\Shop\Tools\UploadableTraitContact;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\UploadedFile;
-// use Illuminate\Support\Collection;
-// use Illuminate\Support\Facades\DB;
 
 class ContactRepository extends BaseRepository implements ContactRepositoryInterface
 {
@@ -28,6 +26,23 @@ class ContactRepository extends BaseRepository implements ContactRepositoryInter
     {
         parent::__construct($contact);
         $this->model = $contact;
+    }
+
+    /**
+     * Create the contact
+     *
+     * @param array $data
+     *
+     * @return Contact
+     * @throws ContactCreateErrorException
+     */
+    public function createContact(array $data): Contact
+    {
+        try {
+            return $this->create($data);
+        } catch (QueryException $e) {
+            throw new ContactCreateErrorException($e);
+        }
     }
 
     /**

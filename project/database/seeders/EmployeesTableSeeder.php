@@ -10,6 +10,11 @@ class EmployeesTableSeeder extends Seeder
 {
     public function run()
     {
+        // Definition of permissions
+        // -------------- Blogs --------------
+        // -------------- End - Blogs --------------
+
+        // -------------- Products --------------
         $createProductPerm = factory(Permission::class)->create([
             'name' => 'create-product',
             'display_name' => 'Create product'
@@ -34,7 +39,16 @@ class EmployeesTableSeeder extends Seeder
             'name' => 'update-order',
             'display_name' => 'Update order'
         ]);
+        // -------------- End - Products --------------
+        // -------------- Contact --------------
+        $createContactPerm = factory(Permission::class)->create([
+            'name' => 'update-contact',
+            'display_name' => 'Update contact'
+        ]);
+        // -------------- End - Contact --------------
 
+        // Assignment of Permits - Roles
+        // -------------- Rol: SuperAdmin --------------
         $employee = factory(Employee::class)->create([
             'email' => 'john@doe.com'
         ]);
@@ -50,9 +64,12 @@ class EmployeesTableSeeder extends Seeder
         $roleSuperRepo->attachToPermission($updateProductPerm);
         $roleSuperRepo->attachToPermission($deleteProductPerm);
         $roleSuperRepo->attachToPermission($updateOrderPerm);
+        $roleSuperRepo->attachToPermission($createContactPerm);
 
         $employee->roles()->save($super);
+        // -------------- End - SuperAdmin --------------
 
+        // -------------- Rol: Admin --------------
         $employee = factory(Employee::class)->create([
             'email' => 'admin@doe.com'
         ]);
@@ -68,9 +85,12 @@ class EmployeesTableSeeder extends Seeder
         $roleAdminRepo->attachToPermission($updateProductPerm);
         $roleAdminRepo->attachToPermission($deleteProductPerm);
         $roleAdminRepo->attachToPermission($updateOrderPerm);
+        $roleSuperRepo->attachToPermission($createContactPerm);
 
         $employee->roles()->save($admin);
+        // -------------- End - Admin --------------
 
+        // -------------- Rol: Clerk --------------
         $employee = factory(Employee::class)->create([
             'email' => 'clerk@doe.com'
         ]);
@@ -86,5 +106,6 @@ class EmployeesTableSeeder extends Seeder
         $roleClerkRepo->attachToPermission($updateProductPerm);
 
         $employee->roles()->save($clerk);
+        // -------------- End - Clerk --------------
     }
 }

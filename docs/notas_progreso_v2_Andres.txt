@@ -35,6 +35,9 @@
 					project\storage\framework\cache\data
 		php artisan config:clear
 		php artisan config:cache
+
+		php artisan cache:clear && php artisan config:clear && php artisan config:cache
+
 	
 	Error SQLSTATE[42S02]
 		https://laravel.com/docs/5.8/eloquent#eloquent-model-conventions
@@ -64,13 +67,155 @@
         modified:   project/resources/views/layouts/front/footer.blade.php
         modified:   project/routes/web.php
 
+	14 de octubre de 2023
+		Explicacion Roles y Permisos laravel
+			project\database\seeders\EmployeesTableSeeder.php
+				1. Crea el permiso en la base de datos
+					$createContactPerm = factory(Permission::class)->create([
+				
+				Loop - Para cada empleado
+					2. Crea el empleado
+						$employee = factory(Employee::class)->create([
+					3. Crea el Role
+						$super = factory(Role::class)->create([
+					4. Asigna el permiso a un role
+						$roleSuperRepo = new RoleRepository($super);
+        				$roleSuperRepo->attachToPermission($createProductPerm);
+						...
+        				$employee->roles()->save($super);
+	
+	15 de octubre de 2023
+		Explicacion de Ruta de actualizacion de los datos de Contact
+			Opcion 1: Ingresando a http://localhost:8000/admin/contact/1/edit
+				1. Parte de 
+            		<form action="{{ route('admin.contact.update', $contact->id) }}" method="post" class="form" enctype="multipart/form-data">
+
+                2. La ruta admin.contact.update como tal en web.php no esta explicitamente en web.php, pero si esta el admin.contact, el edit esta dentro del controlador
+					Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.' ], function () {
+					Route::namespace('Admin')->group(function () {
+						Route::group(['middleware' => ['role:admin|superadmin|clerk, guard:employee']], function () {
+							...
+							...
+							Route::namespace('Contact')->group(function () {
+								Route::resource('contact', 'ContactController'); 
+								Route::get('remove-image-contact', 'ContactController@removeImage')->name('contact.remove.image');
+							});
+				
+				3. Esto lo conlleva a la funcion update del controlador
+        			$this->middleware(['permission:update-contact, guard:employee'], ['only' => ['edit', 'update']]);
+					...
+
+					project\app\Http\Controllers\Admin\Contact\ContactController.php
+						/**
+						* Update the specified resource in storage.
+						*
+						* @param  UpdateContactRequest $request
+						* @param  int $id 
+						* 
+						* @return RedirectResponse
+						* @throws ContactUpdateErrorException
+						*/
+						public function update(UpdateContactRequest $request, int $id)
+						{
+							$contact = $this->contactRepo->findContactById($id);
+							$contactRepo = new ContactRepository($contact);
+							$data = $request->except('_token', '_method');
+							if ($request->hasFile('cover') && $request->file('cover') instanceof UploadedFile) {
+								$data['cover'] = $this->contactRepo->saveCoverImage($request->file('cover'));
+							}
+							$contactRepo->updateContact($data);
+							return redirect()->route('admin.contact.edit', $contact->id)->with('message', 'Update successful');
+						}
+				4. Lo anterior retorna/redirige a la vista de actualizacion, dentro del mismo controlador
+					/**
+					* Display a listing of the resource.
+					* @param  int $id 
+					*
+					* @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+					*/
+					public function edit($id)
+					{
+						$contact = $this->contactRepo->findContactById($id);
+
+						return view('admin.contact.edit', [
+							'contact' => $contact
+						]);
+					}
+
+			Opcion 2: Ingresando a http://localhost:8000/admin/contact/
+				1. Parte de 
+            		<form action="{{ route('admin.contact.update', $contact->id) }}" method="post" class="form" enctype="multipart/form-data">
+
+                2. La ruta admin.contact.update como tal en web.php no esta explicitamente en web.php, pero si esta el admin.contact, el edit esta dentro del controlador
+					Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.' ], function () {
+					Route::namespace('Admin')->group(function () {
+						Route::group(['middleware' => ['role:admin|superadmin|clerk, guard:employee']], function () {
+							...
+							...
+							Route::namespace('Contact')->group(function () {
+								Route::resource('contact', 'ContactController'); 
+								Route::get('remove-image-contact', 'ContactController@removeImage')->name('contact.remove.image');
+							});
+				
+				3. Esto lo conlleva a la funcion update del controlador
+        			$this->middleware(['permission:update-contact, guard:employee'], ['only' => ['index', 'update']]);
+					...
+
+					project\app\Http\Controllers\Admin\Contact\ContactController.php
+						/**
+						* Update the specified resource in storage.
+						*
+						* @param  UpdateContactRequest $request
+						* @param  int $id 
+						* 
+						* @return RedirectResponse
+						* @throws ContactUpdateErrorException
+						*/
+						public function update(UpdateContactRequest $request, int $id)
+						{
+							$contact = $this->contactRepo->findContactById($id);
+							$contactRepo = new ContactRepository($contact);
+							$data = $request->except('_token', '_method');
+							if ($request->hasFile('cover') && $request->file('cover') instanceof UploadedFile) {
+								$data['cover'] = $this->contactRepo->saveCoverImage($request->file('cover'));
+							}
+							$contactRepo->updateContact($data);
+							return redirect()->route('admin.contact.index')->with('message', 'Update successful');
+						}
+				4. Lo anterior retorna/redirige a la vista de actualizacion, dentro del mismo controlador
+					/**
+					* Display a listing of the resource.
+					*
+					* @return Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+					*/
+					public function index()
+					{
+						$contact = $this->contactRepo->findContactById(1);
+
+						return view('admin.contact.edit', [
+							'contact' => $contact
+						]);
+					}
 
 
 Tareas:
 	1. Agregar en admin la vista/seccion para mostrar los datos de contacto
+	2. Revisar/Actualizar la lógica del back de Contact. Dado que estaba usando funciones "viejas"
+		de BaseRepository (tirsoElectronica v1). 
+		(Listo) 2.1 Organizar project\resources\views\admin\contact\edit.blade.php
+			(Listo) Admin.edit - Revisar que se actualice la informacion
+			(Listo) Admin.edit - Subir cover no esta funcionando
+			(Futuro) Admin.edit - Las notificaciones de que campos han sido actualizados
+					(Listo) Admin.edit - La notificaciones de que ha sido actualizado
+		(Listo) 2.2 localhost:8000/contact tiene error
+		(Listo) 2.3 Crear roles para contacto
+	3. Actualizar el Repositorio del shoppingcart (andresgarzonj/shoppingcart). Dado que en los 
+		archivos aun tiene referencias a Jsdecena. (PasosInstalacion linea 108) 
 
 
 john@doe.com / secret (role:superadmin)
 admin@doe.com / secret (role:admin)
 clerk@doe.com / secret (role:user)
 php artisan serve
+
+[Feat] Add contact.name_headquarter in db
