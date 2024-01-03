@@ -31,6 +31,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
                 Route::get('remove-image-product', 'ProductController@removeImage')->name('product.remove.image');
                 Route::get('remove-image-thumb', 'ProductController@removeThumbnail')->name('product.remove.thumb');
             });
+            Route::namespace('Blogs')->group(function () {
+                Route::resource('blogs', 'BlogController');
+                Route::get('remove-image-blog', 'BlogController@removeImage')->name('blog.remove.image');
+                Route::get('remove-image-thumb', 'BlogController@removeThumbnail')->name('blog.remove.thumb');
+            });
             Route::namespace('Contact')->group(function () {
                 Route::resource('contact', 'ContactController'); 
                 Route::get('remove-image-contact', 'ContactController@removeImage')->name('contact.remove.image');
@@ -106,4 +111,6 @@ Route::namespace('Front')->group(function () {
     Route::get("category/{slug}", 'CategoryController@getCategory')->name('front.category.slug');
     Route::get("search", 'ProductController@search')->name('search.product');
     Route::get("{product}", 'ProductController@show')->name('front.get.product');
+    Route::get("blogs/search", 'BlogController@search')->name('search.blog');
+    Route::get("blogs/{slug}", 'BlogController@show')->name('front.get.blog');
 });
